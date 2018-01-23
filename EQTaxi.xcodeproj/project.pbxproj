@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB123FE8201737B300B71B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB123FE7201737B300B71B87 /* AppDelegate.swift */; };
+		CB123FEA201737B300B71B87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB123FE9201737B300B71B87 /* ViewController.swift */; };
+		CB123FED201737B300B71B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB123FEB201737B300B71B87 /* Main.storyboard */; };
+		CB123FEF201737B300B71B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB123FEE201737B300B71B87 /* Assets.xcassets */; };
+		CB123FF2201737B300B71B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB123FF0201737B300B71B87 /* LaunchScreen.storyboard */; };
+		CB123FFD201737B300B71B87 /* EQTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB123FFC201737B300B71B87 /* EQTaxiTests.swift */; };
+		CB124008201737B300B71B87 /* EQTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB124007201737B300B71B87 /* EQTaxiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB123FF9201737B300B71B87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB123FDC201737B300B71B87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB123FE3201737B300B71B87;
+			remoteInfo = EQTaxi;
+		};
+		CB124004201737B300B71B87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB123FDC201737B300B71B87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB123FE3201737B300B71B87;
+			remoteInfo = EQTaxi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB123FE4201737B300B71B87 /* EQTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EQTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB123FE7201737B300B71B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB123FE9201737B300B71B87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB123FEC201737B300B71B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB123FEE201737B300B71B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB123FF1201737B300B71B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB123FF3201737B300B71B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB123FF8201737B300B71B87 /* EQTaxiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EQTaxiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB123FFC201737B300B71B87 /* EQTaxiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQTaxiTests.swift; sourceTree = "<group>"; };
+		CB123FFE201737B300B71B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB124003201737B300B71B87 /* EQTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EQTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB124007201737B300B71B87 /* EQTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQTaxiUITests.swift; sourceTree = "<group>"; };
+		CB124009201737B300B71B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB123FE1201737B300B71B87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB123FF5201737B300B71B87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB124000201737B300B71B87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB123FDB201737B300B71B87 = {
+			isa = PBXGroup;
+			children = (
+				CB123FE6201737B300B71B87 /* EQTaxi */,
+				CB123FFB201737B300B71B87 /* EQTaxiTests */,
+				CB124006201737B300B71B87 /* EQTaxiUITests */,
+				CB123FE5201737B300B71B87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB123FE5201737B300B71B87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB123FE4201737B300B71B87 /* EQTaxi.app */,
+				CB123FF8201737B300B71B87 /* EQTaxiTests.xctest */,
+				CB124003201737B300B71B87 /* EQTaxiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB123FE6201737B300B71B87 /* EQTaxi */ = {
+			isa = PBXGroup;
+			children = (
+				CB123FE7201737B300B71B87 /* AppDelegate.swift */,
+				CB123FE9201737B300B71B87 /* ViewController.swift */,
+				CB123FEB201737B300B71B87 /* Main.storyboard */,
+				CB123FEE201737B300B71B87 /* Assets.xcassets */,
+				CB123FF0201737B300B71B87 /* LaunchScreen.storyboard */,
+				CB123FF3201737B300B71B87 /* Info.plist */,
+			);
+			path = EQTaxi;
+			sourceTree = "<group>";
+		};
+		CB123FFB201737B300B71B87 /* EQTaxiTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB123FFC201737B300B71B87 /* EQTaxiTests.swift */,
+				CB123FFE201737B300B71B87 /* Info.plist */,
+			);
+			path = EQTaxiTests;
+			sourceTree = "<group>";
+		};
+		CB124006201737B300B71B87 /* EQTaxiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB124007201737B300B71B87 /* EQTaxiUITests.swift */,
+				CB124009201737B300B71B87 /* Info.plist */,
+			);
+			path = EQTaxiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB123FE3201737B300B71B87 /* EQTaxi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB12400C201737B300B71B87 /* Build configuration list for PBXNativeTarget "EQTaxi" */;
+			buildPhases = (
+				CB123FE0201737B300B71B87 /* Sources */,
+				CB123FE1201737B300B71B87 /* Frameworks */,
+				CB123FE2201737B300B71B87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EQTaxi;
+			productName = EQTaxi;
+			productReference = CB123FE4201737B300B71B87 /* EQTaxi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB123FF7201737B300B71B87 /* EQTaxiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB12400F201737B300B71B87 /* Build configuration list for PBXNativeTarget "EQTaxiTests" */;
+			buildPhases = (
+				CB123FF4201737B300B71B87 /* Sources */,
+				CB123FF5201737B300B71B87 /* Frameworks */,
+				CB123FF6201737B300B71B87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB123FFA201737B300B71B87 /* PBXTargetDependency */,
+			);
+			name = EQTaxiTests;
+			productName = EQTaxiTests;
+			productReference = CB123FF8201737B300B71B87 /* EQTaxiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB124002201737B300B71B87 /* EQTaxiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB124012201737B300B71B87 /* Build configuration list for PBXNativeTarget "EQTaxiUITests" */;
+			buildPhases = (
+				CB123FFF201737B300B71B87 /* Sources */,
+				CB124000201737B300B71B87 /* Frameworks */,
+				CB124001201737B300B71B87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB124005201737B300B71B87 /* PBXTargetDependency */,
+			);
+			name = EQTaxiUITests;
+			productName = EQTaxiUITests;
+			productReference = CB124003201737B300B71B87 /* EQTaxiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB123FDC201737B300B71B87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Equator Technologies";
+				TargetAttributes = {
+					CB123FE3201737B300B71B87 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					CB123FF7201737B300B71B87 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CB123FE3201737B300B71B87;
+					};
+					CB124002201737B300B71B87 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CB123FE3201737B300B71B87;
+					};
+				};
+			};
+			buildConfigurationList = CB123FDF201737B300B71B87 /* Build configuration list for PBXProject "EQTaxi" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB123FDB201737B300B71B87;
+			productRefGroup = CB123FE5201737B300B71B87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB123FE3201737B300B71B87 /* EQTaxi */,
+				CB123FF7201737B300B71B87 /* EQTaxiTests */,
+				CB124002201737B300B71B87 /* EQTaxiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB123FE2201737B300B71B87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB123FF2201737B300B71B87 /* LaunchScreen.storyboard in Resources */,
+				CB123FEF201737B300B71B87 /* Assets.xcassets in Resources */,
+				CB123FED201737B300B71B87 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB123FF6201737B300B71B87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB124001201737B300B71B87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB123FE0201737B300B71B87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB123FEA201737B300B71B87 /* ViewController.swift in Sources */,
+				CB123FE8201737B300B71B87 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB123FF4201737B300B71B87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB123FFD201737B300B71B87 /* EQTaxiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB123FFF201737B300B71B87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB124008201737B300B71B87 /* EQTaxiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB123FFA201737B300B71B87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB123FE3201737B300B71B87 /* EQTaxi */;
+			targetProxy = CB123FF9201737B300B71B87 /* PBXContainerItemProxy */;
+		};
+		CB124005201737B300B71B87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB123FE3201737B300B71B87 /* EQTaxi */;
+			targetProxy = CB124004201737B300B71B87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB123FEB201737B300B71B87 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB123FEC201737B300B71B87 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB123FF0201737B300B71B87 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB123FF1201737B300B71B87 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB12400A201737B300B71B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB12400B201737B300B71B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB12400D201737B300B71B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
+				INFOPLIST_FILE = EQTaxi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB12400E201737B300B71B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
+				INFOPLIST_FILE = EQTaxi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB124010201737B300B71B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
+				INFOPLIST_FILE = EQTaxiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EQTaxi.app/EQTaxi";
+			};
+			name = Debug;
+		};
+		CB124011201737B300B71B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
+				INFOPLIST_FILE = EQTaxiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EQTaxi.app/EQTaxi";
+			};
+			name = Release;
+		};
+		CB124013201737B300B71B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
+				INFOPLIST_FILE = EQTaxiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EQTaxi;
+			};
+			name = Debug;
+		};
+		CB124014201737B300B71B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
+				INFOPLIST_FILE = EQTaxiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EQTaxi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB123FDF201737B300B71B87 /* Build configuration list for PBXProject "EQTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB12400A201737B300B71B87 /* Debug */,
+				CB12400B201737B300B71B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB12400C201737B300B71B87 /* Build configuration list for PBXNativeTarget "EQTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB12400D201737B300B71B87 /* Debug */,
+				CB12400E201737B300B71B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB12400F201737B300B71B87 /* Build configuration list for PBXNativeTarget "EQTaxiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB124010201737B300B71B87 /* Debug */,
+				CB124011201737B300B71B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB124012201737B300B71B87 /* Build configuration list for PBXNativeTarget "EQTaxiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB124013201737B300B71B87 /* Debug */,
+				CB124014201737B300B71B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB123FDC201737B300B71B87 /* Project object */;
+}
