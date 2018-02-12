@@ -7,13 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0ED4466BB563AC71BE49BF /* Pods_EQTaxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0EF09536B7C2A2FCD87B5D /* Pods_EQTaxi.framework */; };
+		CB0126E02019BDAE00C5935C /* CallingCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB0126DD2019BDAD00C5935C /* CallingCodes.plist */; };
+		CB0126E32019CEE100C5935C /* MICountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0126E22019CEE100C5935C /* MICountryPicker.swift */; };
+		CB0126E52019DE3600C5935C /* assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB0126E42019DE3500C5935C /* assets.bundle */; };
+		CB116DE6201F052200EE0EFC /* map_style.json in Resources */ = {isa = PBXBuildFile; fileRef = CB116DE5201F052200EE0EFC /* map_style.json */; };
 		CB123FE8201737B300B71B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB123FE7201737B300B71B87 /* AppDelegate.swift */; };
-		CB123FEA201737B300B71B87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB123FE9201737B300B71B87 /* ViewController.swift */; };
 		CB123FED201737B300B71B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB123FEB201737B300B71B87 /* Main.storyboard */; };
 		CB123FEF201737B300B71B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB123FEE201737B300B71B87 /* Assets.xcassets */; };
 		CB123FF2201737B300B71B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB123FF0201737B300B71B87 /* LaunchScreen.storyboard */; };
 		CB123FFD201737B300B71B87 /* EQTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB123FFC201737B300B71B87 /* EQTaxiTests.swift */; };
 		CB124008201737B300B71B87 /* EQTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB124007201737B300B71B87 /* EQTaxiUITests.swift */; };
+		CB1240282017382E00B71B87 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1240212017382E00B71B87 /* Constant.swift */; };
+		CB12402A2017386600B71B87 /* LoginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1240292017386600B71B87 /* LoginVc.swift */; };
+		CB12402D2017388400B71B87 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12402C2017388400B71B87 /* DataHandler.swift */; };
+		CB235F0F202C34B20009C28A /* CarlistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB235F0E202C34B20009C28A /* CarlistCollectionViewCell.swift */; };
+		CB4E4B2C202880FF0073A186 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4E4B24202880FF0073A186 /* Quicksand-Bold.otf */; };
+		CB4E4B2D202880FF0073A186 /* Quicksand-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4E4B25202880FF0073A186 /* Quicksand-BoldItalic.otf */; };
+		CB4E4B2E202880FF0073A186 /* Quicksand-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4E4B26202880FF0073A186 /* Quicksand-Italic.otf */; };
+		CB4E4B31202880FF0073A186 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4E4B29202880FF0073A186 /* Quicksand-Regular.otf */; };
+		CB4F828F2029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4F82892029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib */; };
+		CB4F82932029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F828D2029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift */; };
+		CB963CC12021C83A0031B451 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB963CC02021C83A0031B451 /* Utilities.swift */; };
+		CB963CC62021D0810031B451 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB963CC52021D0810031B451 /* Toast.swift */; };
+		CB963CC82021D6210031B451 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB963CC72021D6200031B451 /* Reachability.swift */; };
+		CBB4DCA7202DA9CA00375C63 /* AvailableCarListVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB4DCA6202DA9CA00375C63 /* AvailableCarListVc.swift */; };
+		CBDBEB5A201C4BEF008FAA02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBDBEB59201C4BEF008FAA02 /* GoogleService-Info.plist */; };
+		CBDBEB5C201C57C5008FAA02 /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDBEB5B201C57C5008FAA02 /* HomeVc.swift */; };
+		CBDBEB5E201C8A05008FAA02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDBEB5D201C8A05008FAA02 /* ViewController.swift */; };
+		CBFAE38520207A82001A6157 /* ARCarMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFAE38420207A82001A6157 /* ARCarMovement.swift */; };
+		CBFE2812202AE83A00170DDD /* BottomSheetInitialSheetVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFE2810202AE83A00170DDD /* BottomSheetInitialSheetVc.swift */; };
+		CBFE2813202AE83A00170DDD /* BottomSheetInitialSheetVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFE2811202AE83A00170DDD /* BottomSheetInitialSheetVc.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +58,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79BC0C54E376383A4836618F /* Pods-EQTaxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EQTaxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EQTaxi/Pods-EQTaxi.debug.xcconfig"; sourceTree = "<group>"; };
+		AC0EF09536B7C2A2FCD87B5D /* Pods_EQTaxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EQTaxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B444DCFAEE14F8C586C1B1BE /* Pods-EQTaxi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EQTaxi.release.xcconfig"; path = "Pods/Target Support Files/Pods-EQTaxi/Pods-EQTaxi.release.xcconfig"; sourceTree = "<group>"; };
+		CB0126DD2019BDAD00C5935C /* CallingCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CallingCodes.plist; sourceTree = "<group>"; };
+		CB0126E22019CEE100C5935C /* MICountryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MICountryPicker.swift; sourceTree = "<group>"; };
+		CB0126E42019DE3500C5935C /* assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = assets.bundle; sourceTree = "<group>"; };
+		CB116DE5201F052200EE0EFC /* map_style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map_style.json; sourceTree = "<group>"; };
 		CB123FE4201737B300B71B87 /* EQTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EQTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB123FE7201737B300B71B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB123FE9201737B300B71B87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB123FEC201737B300B71B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB123FEE201737B300B71B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB123FF1201737B300B71B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +77,28 @@
 		CB124003201737B300B71B87 /* EQTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EQTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB124007201737B300B71B87 /* EQTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQTaxiUITests.swift; sourceTree = "<group>"; };
 		CB124009201737B300B71B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB1240212017382E00B71B87 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CB1240292017386600B71B87 /* LoginVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVc.swift; sourceTree = "<group>"; };
+		CB12402C2017388400B71B87 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		CB235F0B202C280C0009C28A /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
+		CB235F0C202C280C0009C28A /* Muli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Muli.ttf; sourceTree = "<group>"; };
+		CB235F0E202C34B20009C28A /* CarlistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarlistCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB4E4B24202880FF0073A186 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
+		CB4E4B25202880FF0073A186 /* Quicksand-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-BoldItalic.otf"; sourceTree = "<group>"; };
+		CB4E4B26202880FF0073A186 /* Quicksand-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Italic.otf"; sourceTree = "<group>"; };
+		CB4E4B29202880FF0073A186 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
+		CB4F82892029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollableBottomSheetViewController.xib; sourceTree = "<group>"; };
+		CB4F828D2029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetViewController.swift; sourceTree = "<group>"; };
+		CB963CC02021C83A0031B451 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		CB963CC52021D0810031B451 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		CB963CC72021D6200031B451 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		CBB4DCA6202DA9CA00375C63 /* AvailableCarListVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCarListVc.swift; sourceTree = "<group>"; };
+		CBDBEB59201C4BEF008FAA02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CBDBEB5B201C57C5008FAA02 /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
+		CBDBEB5D201C8A05008FAA02 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBFAE38420207A82001A6157 /* ARCarMovement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCarMovement.swift; sourceTree = "<group>"; };
+		CBFE2810202AE83A00170DDD /* BottomSheetInitialSheetVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetInitialSheetVc.swift; sourceTree = "<group>"; };
+		CBFE2811202AE83A00170DDD /* BottomSheetInitialSheetVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetInitialSheetVc.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0ED4466BB563AC71BE49BF /* Pods_EQTaxi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +127,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825DDCF0E38514A5098FE1CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79BC0C54E376383A4836618F /* Pods-EQTaxi.debug.xcconfig */,
+				B444DCFAEE14F8C586C1B1BE /* Pods-EQTaxi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB0126DB2019BDAD00C5935C /* CountryPicker Source */ = {
+			isa = PBXGroup;
+			children = (
+				CB0126E42019DE3500C5935C /* assets.bundle */,
+				CB0126DD2019BDAD00C5935C /* CallingCodes.plist */,
+				CB0126E22019CEE100C5935C /* MICountryPicker.swift */,
+			);
+			path = "CountryPicker Source";
+			sourceTree = "<group>";
+		};
+		CB116DE7201F052700EE0EFC /* GoogleMapStyle */ = {
+			isa = PBXGroup;
+			children = (
+				CB116DE5201F052200EE0EFC /* map_style.json */,
+			);
+			path = GoogleMapStyle;
+			sourceTree = "<group>";
+		};
 		CB123FDB201737B300B71B87 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +161,8 @@
 				CB123FFB201737B300B71B87 /* EQTaxiTests */,
 				CB124006201737B300B71B87 /* EQTaxiUITests */,
 				CB123FE5201737B300B71B87 /* Products */,
+				825DDCF0E38514A5098FE1CC /* Pods */,
+				F9E81E365441A501EF26F68B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +179,12 @@
 		CB123FE6201737B300B71B87 /* EQTaxi */ = {
 			isa = PBXGroup;
 			children = (
-				CB123FE7201737B300B71B87 /* AppDelegate.swift */,
-				CB123FE9201737B300B71B87 /* ViewController.swift */,
-				CB123FEB201737B300B71B87 /* Main.storyboard */,
-				CB123FEE201737B300B71B87 /* Assets.xcassets */,
-				CB123FF0201737B300B71B87 /* LaunchScreen.storyboard */,
-				CB123FF3201737B300B71B87 /* Info.plist */,
+				CB12402B2017388400B71B87 /* DataHandler */,
+				CB1240182017380200B71B87 /* Utilities */,
+				CB124017201737F400B71B87 /* Controler */,
+				CB235F0D202C346F0009C28A /* View */,
+				CB124016201737D600B71B87 /* Resource */,
+				CB124015201737BC00B71B87 /* AppDelegate */,
 			);
 			path = EQTaxi;
 			sourceTree = "<group>";
@@ -125,6 +207,125 @@
 			path = EQTaxiUITests;
 			sourceTree = "<group>";
 		};
+		CB124015201737BC00B71B87 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CBDBEB5D201C8A05008FAA02 /* ViewController.swift */,
+				CB123FE7201737B300B71B87 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CB124016201737D600B71B87 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CBDBEB59201C4BEF008FAA02 /* GoogleService-Info.plist */,
+				CB123FEB201737B300B71B87 /* Main.storyboard */,
+				CB123FEE201737B300B71B87 /* Assets.xcassets */,
+				CB123FF0201737B300B71B87 /* LaunchScreen.storyboard */,
+				CB123FF3201737B300B71B87 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CB124017201737F400B71B87 /* Controler */ = {
+			isa = PBXGroup;
+			children = (
+				CB235F0A202C1CFE0009C28A /* CarlistVc */,
+				CB4F82872029F63F00C16BC5 /* BottomSheetVc */,
+				CB1240292017386600B71B87 /* LoginVc.swift */,
+				CBDBEB5B201C57C5008FAA02 /* HomeVc.swift */,
+			);
+			path = Controler;
+			sourceTree = "<group>";
+		};
+		CB1240182017380200B71B87 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB4E4B23202880FF0073A186 /* quicksand */,
+				CB963CC42021D05F0031B451 /* Catigories */,
+				CB963CC02021C83A0031B451 /* Utilities.swift */,
+				CBFAE38420207A82001A6157 /* ARCarMovement.swift */,
+				CB116DE7201F052700EE0EFC /* GoogleMapStyle */,
+				CB0126DB2019BDAD00C5935C /* CountryPicker Source */,
+				CB1240202017382E00B71B87 /* Constant */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CB1240202017382E00B71B87 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				CB1240212017382E00B71B87 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		CB12402B2017388400B71B87 /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				CB12402C2017388400B71B87 /* DataHandler.swift */,
+			);
+			path = DataHandler;
+			sourceTree = "<group>";
+		};
+		CB235F0A202C1CFE0009C28A /* CarlistVc */ = {
+			isa = PBXGroup;
+			children = (
+				CBB4DCA6202DA9CA00375C63 /* AvailableCarListVc.swift */,
+			);
+			path = CarlistVc;
+			sourceTree = "<group>";
+		};
+		CB235F0D202C346F0009C28A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB235F0E202C34B20009C28A /* CarlistCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB4E4B23202880FF0073A186 /* quicksand */ = {
+			isa = PBXGroup;
+			children = (
+				CB235F0B202C280C0009C28A /* Muli-Bold.ttf */,
+				CB235F0C202C280C0009C28A /* Muli.ttf */,
+				CB4E4B24202880FF0073A186 /* Quicksand-Bold.otf */,
+				CB4E4B25202880FF0073A186 /* Quicksand-BoldItalic.otf */,
+				CB4E4B26202880FF0073A186 /* Quicksand-Italic.otf */,
+				CB4E4B29202880FF0073A186 /* Quicksand-Regular.otf */,
+			);
+			path = quicksand;
+			sourceTree = "<group>";
+		};
+		CB4F82872029F63F00C16BC5 /* BottomSheetVc */ = {
+			isa = PBXGroup;
+			children = (
+				CB4F828D2029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift */,
+				CB4F82892029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib */,
+				CBFE2810202AE83A00170DDD /* BottomSheetInitialSheetVc.swift */,
+				CBFE2811202AE83A00170DDD /* BottomSheetInitialSheetVc.xib */,
+			);
+			path = BottomSheetVc;
+			sourceTree = "<group>";
+		};
+		CB963CC42021D05F0031B451 /* Catigories */ = {
+			isa = PBXGroup;
+			children = (
+				CB963CC72021D6200031B451 /* Reachability.swift */,
+				CB963CC52021D0810031B451 /* Toast.swift */,
+			);
+			path = Catigories;
+			sourceTree = "<group>";
+		};
+		F9E81E365441A501EF26F68B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC0EF09536B7C2A2FCD87B5D /* Pods_EQTaxi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB12400C201737B300B71B87 /* Build configuration list for PBXNativeTarget "EQTaxi" */;
 			buildPhases = (
+				0F4AC768ED3B71B43753F517 /* [CP] Check Pods Manifest.lock */,
 				CB123FE0201737B300B71B87 /* Sources */,
 				CB123FE1201737B300B71B87 /* Frameworks */,
 				CB123FE2201737B300B71B87 /* Resources */,
+				D2478730B556C7ABF5F8E9CD /* [CP] Embed Pods Frameworks */,
+				B1180E35DAC3AC08B0B79AC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,7 +438,17 @@
 			files = (
 				CB123FF2201737B300B71B87 /* LaunchScreen.storyboard in Resources */,
 				CB123FEF201737B300B71B87 /* Assets.xcassets in Resources */,
+				CB4E4B2C202880FF0073A186 /* Quicksand-Bold.otf in Resources */,
+				CB4E4B2E202880FF0073A186 /* Quicksand-Italic.otf in Resources */,
+				CB116DE6201F052200EE0EFC /* map_style.json in Resources */,
+				CBFE2813202AE83A00170DDD /* BottomSheetInitialSheetVc.xib in Resources */,
+				CB0126E02019BDAE00C5935C /* CallingCodes.plist in Resources */,
+				CB4F828F2029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib in Resources */,
+				CB4E4B2D202880FF0073A186 /* Quicksand-BoldItalic.otf in Resources */,
+				CBDBEB5A201C4BEF008FAA02 /* GoogleService-Info.plist in Resources */,
 				CB123FED201737B300B71B87 /* Main.storyboard in Resources */,
+				CB4E4B31202880FF0073A186 /* Quicksand-Regular.otf in Resources */,
+				CB0126E52019DE3600C5935C /* assets.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +468,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F4AC768ED3B71B43753F517 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EQTaxi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1180E35DAC3AC08B0B79AC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EQTaxi/Pods-EQTaxi-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EQTaxi/Pods-EQTaxi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2478730B556C7ABF5F8E9CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EQTaxi/Pods-EQTaxi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketCluster-ios-client/SocketCluster_ios_client.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketCluster_ios_client.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EQTaxi/Pods-EQTaxi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB123FE0201737B300B71B87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB123FEA201737B300B71B87 /* ViewController.swift in Sources */,
+				CB4F82932029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift in Sources */,
+				CBDBEB5C201C57C5008FAA02 /* HomeVc.swift in Sources */,
 				CB123FE8201737B300B71B87 /* AppDelegate.swift in Sources */,
+				CBFE2812202AE83A00170DDD /* BottomSheetInitialSheetVc.swift in Sources */,
+				CBFAE38520207A82001A6157 /* ARCarMovement.swift in Sources */,
+				CB0126E32019CEE100C5935C /* MICountryPicker.swift in Sources */,
+				CB12402A2017386600B71B87 /* LoginVc.swift in Sources */,
+				CBDBEB5E201C8A05008FAA02 /* ViewController.swift in Sources */,
+				CB235F0F202C34B20009C28A /* CarlistCollectionViewCell.swift in Sources */,
+				CB963CC12021C83A0031B451 /* Utilities.swift in Sources */,
+				CB963CC82021D6210031B451 /* Reachability.swift in Sources */,
+				CB963CC62021D0810031B451 /* Toast.swift in Sources */,
+				CB1240282017382E00B71B87 /* Constant.swift in Sources */,
+				CB12402D2017388400B71B87 /* DataHandler.swift in Sources */,
+				CBB4DCA7202DA9CA00375C63 /* AvailableCarListVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +644,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -401,7 +701,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -424,14 +724,20 @@
 		};
 		CB12400D201737B300B71B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79BC0C54E376383A4836618F /* Pods-EQTaxi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797M6GHVPC;
-				INFOPLIST_FILE = EQTaxi/Info.plist;
+				INFOPLIST_FILE = EQTaxi/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,14 +745,20 @@
 		};
 		CB12400E201737B300B71B87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B444DCFAEE14F8C586C1B1BE /* Pods-EQTaxi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 797M6GHVPC;
-				INFOPLIST_FILE = EQTaxi/Info.plist;
+				INFOPLIST_FILE = EQTaxi/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer.EQTaxi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

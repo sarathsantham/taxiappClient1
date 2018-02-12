@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Bold.otf">
+            <string>Quicksand-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScrollableBottomSheetViewController" customModule="EQTaxi" customModuleProvider="target">
+            <connections>
+                <outlet property="headerView" destination="3Mg-7K-xJL" id="nIa-ZY-iRV"/>
+                <outlet property="tableView" destination="TOt-wb-Zem" id="1Um-cB-QpC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Mg-7K-xJL">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="School" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hg-c4-jBf">
+                            <rect key="frame" x="61" y="61" width="242" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="17"/>
+                            <color key="textColor" red="0.21176470589999999" green="0.22352941179999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h11-PI-dVA">
+                            <rect key="frame" x="61" y="23" width="242" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="17"/>
+                            <color key="textColor" red="0.21176470589999999" green="0.22352941179999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="history-50" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-7s-EoA">
+                            <rect key="frame" x="16" y="23" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TOt-wb-Zem">
+                            <rect key="frame" x="0.0" y="99" width="320" height="469"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="320" id="cin-Ds-UVk"/>
+                                <constraint firstAttribute="height" constant="469" id="vpb-zR-niM"/>
+                            </constraints>
+                        </tableView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="history-50" translatesAutoresizingMaskIntoConstraints="NO" id="cFp-pG-yoD">
+                            <rect key="frame" x="16" y="61" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="TOt-wb-Zem" firstAttribute="top" secondItem="3Mg-7K-xJL" secondAttribute="top" constant="99" id="9NW-uj-zR7"/>
+                        <constraint firstAttribute="trailing" secondItem="TOt-wb-Zem" secondAttribute="trailing" id="KWv-yz-QHi"/>
+                        <constraint firstAttribute="height" constant="568" id="Xai-r4-Xag"/>
+                        <constraint firstAttribute="width" constant="320" id="YFm-SW-NKC"/>
+                        <constraint firstItem="TOt-wb-Zem" firstAttribute="leading" secondItem="3Mg-7K-xJL" secondAttribute="leading" id="mN8-xG-Zao"/>
+                        <constraint firstAttribute="bottom" secondItem="TOt-wb-Zem" secondAttribute="bottom" id="zs2-o5-vg2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3Mg-7K-xJL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oga-Qr-IVZ"/>
+                <constraint firstAttribute="trailing" secondItem="3Mg-7K-xJL" secondAttribute="trailing" id="qRn-hO-RaG"/>
+                <constraint firstItem="3Mg-7K-xJL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="twA-WF-Oa0"/>
+                <constraint firstAttribute="bottom" secondItem="3Mg-7K-xJL" secondAttribute="bottom" id="z5g-JA-gcM"/>
+            </constraints>
+            <point key="canvasLocation" x="30" y="52"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="history-50" width="60" height="60"/>
+    </resources>
+</document>
