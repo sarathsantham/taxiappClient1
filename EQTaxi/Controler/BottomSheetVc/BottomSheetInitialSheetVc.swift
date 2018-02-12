@@ -10,6 +10,8 @@ import UIKit
 
 class BottomSheetInitialSheetVc: UIViewController {
        var frame = CGFloat ()
+    var frame1 = CGFloat ()
+
     var alphaforbackground12 = CGFloat ()
     var frameend = CGFloat ()
     @IBOutlet weak var headerView: UIView!
