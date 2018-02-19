@@ -14,7 +14,12 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 import SocketCluster_ios_client
-class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITextFieldDelegate{
+class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITextFieldDelegate,AvailableCarListVcDelegate{
+    
+    
+   
+    
+   
     var str_isStart_End_Picker = NSString()
     var dub_LatitudeStart = Double()
     var dub_LongitudeStart = Double()
@@ -25,15 +30,16 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     let bottomSheetLocationVC =  ScrollableBottomSheetViewController()
     var CarlistbottomSheetVC =  AvailableCarListVc()
 
+
 // MARK: Reference outlet for View--------------->
     
     @IBOutlet var view_TopStart_EndLocation: UIView!
     @IBOutlet var view_map: GMSMapView!
     @IBOutlet var view_Top_End: UIView!
-
-    
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var view_RippleEffect: UIView!
-    
+    @IBOutlet var view_DetailCollectionView: UIView!
+
 // MARK: Reference outlet for Label--------------->
     
 
@@ -64,12 +70,20 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            // initialy Hiden Views.
+        // Menu View Confger.
+
+        
+
+        // CarDetailView CollectionView Cell Configure.
+         viewConfigrations()
+        
+        // initialy Hiden Views.
       
        self.view_RippleEffect.isHidden=true
         self.view_TopStart_EndLocation.isHidden=true
         img_centerpin.isHidden=true
         button_doneFordrawPolyLine.isHidden=true
+        view_DetailCollectionView.isHidden=true
        self .AddShadowTo(view_shadow: view_TopStart_EndLocation)
         self .AddShadowTo(view_shadow: view_Top_End)
 
@@ -165,6 +179,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
         view_shadow.layer.shadowColor = UIColor.darkGray.cgColor
     }
     
+
 // MARK: Add Google MapColour  ---------------------------->
 
     func AddGoogleMapColour() {
@@ -193,104 +208,103 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
 // MARK: Check Driver already exist Or Not in mapView ---------------------------->
     
     func CheckDriverAvailableInMapView()  {
-//       let marker = GMSMarker()
-//        let defaults = UserDefaults.standard
-//        let arr_livetracking = defaults.stringArray(forKey: "LivetrackCarId") ?? [String]()
-//        
-//        if arr_livetracking == nil || arr_livetracking.count == 0{
-//            
-//        }else{
-//            var dic_singleValueOfLivetrack: [String: String] = [:]
-//            
-//            for dic_singleValueOfLivetrack in arr_livetracking{
-//                
-//                if self.mArr_Car_MarkerList.count == 0{
-//                    
-//                    self .AddCarlistToAnimate(carlist: dic_singleValueOfLivetrack as! NSDictionary)
-//                    
-//                }else{
-//                    var f : Float = 0
-//                    var h : Float = 0
-//                    var obj_MyAnnotation : NSDictionary = [String :String]() as NSDictionary
-//                    for obj_MyAnnotation in self.mArr_Car_MarkerList{
-//                        h += 1
-//                        let annotationId : String = (obj_MyAnnotation as AnyObject).title as String
-//                        
-//                        
-//                        
-//                    }
-//                }
-//            }
-//            
-//        }
+         let duration: Float = 2.0
+        var myannotation : GMSMarker = GMSMarker()
+        let data1 = UserDefaults.standard.object(forKey: "LivetrackCarId") as? Data
+        let arr_livetrack = NSKeyedUnarchiver.unarchiveObject(with: data1! ) as? [Any]
+        if arr_livetrack == nil || (arr_livetrack as AnyObject).count == 0  {
+            
+        }
+        else{
+            for item in arr_livetrack! {
+                let objdic = item as! NSDictionary
+                print(objdic)
+                let arr : NSMutableArray =  NSMutableArray()
+                if (arr as AnyObject).count == 0 {
+                    // have to call method here.i had already called it below.just enable it
+                    // loadMapView:objdic()
+                }else{
+                    var f = 0
+                    var h = 0
+                    //here obj_MyAnnotation denotes a 'MapAnnotation'
+                         var obj_MyAnnotation = GMSMarker()
+                    for obj_MyAnnotation in arr_livetrack!{
+                        h += 0
+                        let annotationId = obj_MyAnnotation
+                        let driverId =  "\("CarId")\(String(describing: objdic["fk_user_id"]))"
+                        let oflineDriver = UserDefaults.standard.string(forKey: "OfflineUserId")
+                        let offlinecar = "\("CarId")\(String(describing: oflineDriver))"
+                        if oflineDriver == nil || (oflineDriver?.isEmpty)! {
+                        }
+                        else{
+                            if (annotationId as AnyObject).isEqual(offlinecar){
+                                let userAnnotation : GMSMarker = obj_MyAnnotation as! GMSMarker
+                                userAnnotation.map = nil
+                                UserDefaults.standard.set("", forKey: "OfflineUserId")
+                                let obj_RemoveOffline_Driver:NSMutableArray = [arr_livetrack as Any]
+                                obj_RemoveOffline_Driver.remove(h -= 1)
+                                let data12 = NSKeyedArchiver .archivedData(withRootObject: obj_RemoveOffline_Driver)
+                                //here remove object(it denotes mkannotation) from mutablearray.i couldnt get it out
+                                // arr.removeObject(obj_MyAnnotation as! NSMutableArray)
+                                UserDefaults.standard.set(data12, forKey: "LivetrackCarId")
+                                f = 1
+                            }
+                        }
+                        
+                        if (annotationId as AnyObject).isEqual(driverId){
+                            myannotation = obj_MyAnnotation as! GMSMarker
+                            let latitude1 = Double(objdic["latitude"] as! String)
+                            let longitude1 = Double(objdic["longitude"] as! String)
+                            let oldLocation = CLLocationCoordinate2D(latitude: latitude1!, longitude: longitude1!)
+                            
+                            let latitude = Double(objdic["latitude"] as! String)
+                            let longitude = Double(objdic["longitude"] as! String)
+                            let newLocation = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+                            let position = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+                            let marker = GMSMarker(position: position)
+                            let calBearing: Float = getHeadingForDirection(fromCoordinate: oldLocation, toCoordinate: newLocation)
+                            marker.groundAnchor = CGPoint(x: CGFloat(0.5), y: CGFloat(0.5))
+                            marker.rotation = CLLocationDegrees(calBearing); //found bearing value by calculation when marker add
+                            marker.position = oldLocation; //this can be old position to make car movement to new position
+                            
+                            //marker movement animation
+                            CATransaction.begin()
+                            CATransaction.setValue(duration, forKey: kCATransactionAnimationDuration)
+                            CATransaction.setCompletionBlock({() -> Void in
+                                marker.rotation = (Int(0.0) != 0) ? CLLocationDegrees(0.0) : CLLocationDegrees(calBearing)
+                            })
+                          
+                            marker.position = newLocation; //this can be new position after car moved from old position to new position with animation
+                            marker.map = view_map;
+                            marker.rotation = CLLocationDegrees(calBearing);
+                            CATransaction.commit()
+                                
+                           
+                        }
+                       
+                    }
+                    if f == 0{
+                        //    [self loadMapView:objdic];
+                    }
+                }
+            }
+            
+        }
 
     }
+    
+// MARK: Car wrotate radius calculation method ---------------------------->
 
-//    - (void)updateLocation {
-//    MapAnnotation *myAnnotation;
-//    NSData *data1 = [[NSUserDefaults standardUserDefaults] objectForKey:@"LivetrackCarId"];
-//    NSArray *arr_livetrack = [NSKeyedUnarchiver unarchiveObjectWithData:data1];
-//    if (arr_livetrack==nil || arr_livetrack.count==0) {
-//    }else{
-//
-//    for (NSDictionary *objdic in arr_livetrack) {
-//
-//    if (_arr.count==0) {
-//    [self loadMapView:objdic];
-//    }else{
-//    int f=0;
-//    int h=0;
-//    for ( MapAnnotation *obj_MyAnnotation in _arr) {
-//    h++;
-//    NSString *annotationId=[NSString stringWithFormat:@"%@",obj_MyAnnotation.title];
-//    NSString *driverId=[NSString stringWithFormat:@"%@%@",@"CarId",[objdic valueForKey:@"fk_user_id"]];
-//    NSString *oflineDriver = [[NSUserDefaults standardUserDefaults]
-//    stringForKey:@"OfflineUserId"];
-//    NSString *offlinecar=[NSString stringWithFormat:@"%@%@",@"CarId",oflineDriver];
-//    if ([oflineDriver isEqualToString:@""] || oflineDriver==nil) {
-//
-//    }else{
-//    if ([annotationId isEqualToString:offlinecar]) {
-//    id userAnnotation = obj_MyAnnotation;
-//    [_mapview removeAnnotation:userAnnotation];
-//    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"OfflineUserId"];
-//    NSMutableArray *obj_RemoveOffline_Driver=[[NSMutableArray alloc]init];
-//    [obj_RemoveOffline_Driver addObjectsFromArray:arr_livetrack];
-//    [obj_RemoveOffline_Driver removeObjectAtIndex: h-1];
-//    NSData *data12 = [NSKeyedArchiver archivedDataWithRootObject:obj_RemoveOffline_Driver ];
-//    [_arr removeObject:obj_MyAnnotation];
-//    [[NSUserDefaults standardUserDefaults] setObject:data12 forKey:@"LivetrackCarId"];
-//    f=1;
-//    break;
-//    }
-//    }
-//
-//    if ([annotationId isEqualToString:driverId]) {
-//    myAnnotation = obj_MyAnnotation;
-//    oldLocation.latitude =myAnnotation.coordinate.latitude;
-//    oldLocation.longitude = myAnnotation.coordinate.longitude;
-//
-//    newLocation.latitude =[[objdic valueForKey:@"latitude"] doubleValue];
-//    newLocation.longitude =[[objdic valueForKey:@"longitude"] doubleValue];
-//    float getAngle = [self angleFromCoordinate:oldLocation toCoordinate:newLocation];
-//    [UIView animateWithDuration:2.0
-//    animations:^{
-//    myAnnotation.coordinate = newLocation;
-//    AnnotationView *annotationView = (AnnotationView *)[self.mapview viewForAnnotation:myAnnotation];
-//    annotationView.transform = CGAffineTransformMakeRotation(getAngle);
-//    }];
-//    f++;
-//    }
-//
-//    }if(f==0){
-//    [self loadMapView:objdic];
-//    }
-//    }
-//
-//    }
-//    }
-//
-//    }
+    private func getHeadingForDirection(fromCoordinate fromLoc: CLLocationCoordinate2D, toCoordinate toLoc: CLLocationCoordinate2D) -> Float {
+        
+        let fLat: Float = Float((fromLoc.latitude).degreesToRadians)
+        let fLng: Float = Float((fromLoc.longitude).degreesToRadians)
+        let tLat: Float = Float((toLoc.latitude).degreesToRadians)
+        let tLng: Float = Float((toLoc.longitude).degreesToRadians)
+        let degree: Float = (atan2(sin(tLng - fLng) * cos(tLat), cos(fLat) * sin(tLat) - sin(fLat) * cos(tLat) * cos(tLng - fLng))).radiansToDegrees
+        return (degree >= 0) ? degree : (360 + degree)
+    }
+
     
 // MARK: Get Current Location With Name And Lat Long ---------------------------->
     
@@ -429,13 +443,10 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     
 // MARK: update location through pin in the map ---------------------------->
     
-    
-    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         button_CurrentLocation.isHidden=false
-
     }
-
-    
+   
     func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
@@ -485,10 +496,9 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
             button_menu.setImage(UIImage(named: "backArrow(Black).png"), for: .normal)
             view_Top_End.isHidden=true
              self .DrawPoliLineInMap()
-           
             self.CarlistbottomSheetVC = (self.storyboard?.instantiateViewController(withIdentifier: "AvailableCarListVcID"))! as! AvailableCarListVc
             self.addBottomSheetViewMessage(view2: self.CarlistbottomSheetVC)
-
+            CarlistbottomSheetVC.delegate=self
         }
     }
     
@@ -515,16 +525,12 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     }
     @IBAction func didclickCancelRideRequestButton(_ sender: Any) {
     }
-    @IBAction func didclickPromocodeSubmitButton(_ sender: Any) {
-    }
-    @IBAction func didclickRideInfoGotItButton(_ sender: Any) {
-    }
-    @IBAction func didclickNotificationButton(_ sender: Any) {
-    }
     @IBAction func didclickMenuButton(_ sender: Any) {
         if (button_menu.currentImage?.isEqual(UIImage(named: "backArrow(Black)")))! {
               button_menu.setImage(UIImage(named: "menu.png"), for: .normal)
             BackButtonCallForMenuStartEndLOcation()
+        }else{
+            
         }
     }
     @IBAction func didclickRidenowButton(_ sender: Any) {
@@ -552,6 +558,11 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     }
     @IBAction func didclickCancelDriverRideButton(_ sender: Any) {
     }
+    @IBAction func didclickDetailCloseCollectionView(_ sender: Any) {
+        //add bottom sheet message
+        addBottomSheetViewMessage(view2: CarlistbottomSheetVC)
+        view_DetailCollectionView.isHidden=true
+    }
     @IBAction func didclickShareDriverLocation(_ sender: Any) {
     }
     @IBAction func didclickCallDriverButton(_ sender: Any) {
@@ -566,7 +577,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     }
     
 // MARK: Button Actions Methods Call ---------------------------->
-    
+   
  // For BackButton In start & End Location view and Menu Back Button Calll
     
     func BackButtonCallForMenuStartEndLOcation() {
@@ -575,6 +586,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
         img_centerpin.isHidden=true
         button_doneFordrawPolyLine.isHidden=true
         self .dismissKeyboard()
+        
         //add bottom sheet message
         addBottomSheetViewMessage(view2: bottomSheetMessageVC)
 
@@ -596,5 +608,86 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     func CurrentLocation()  {
          self.locationManager.startUpdatingLocation()
     }
+    
+    
+// Delegate Methods (OverAll) ---------------------------------------
+    
+// AvailableCarList Delegate Methods ----------------
+    
+    func DidSelectAvailableCarList() {
+        
+        //remove bottom sheet message
+        self .addBottomSheetViewRemove(view1: CarlistbottomSheetVC)
+        
+        //add bottom sheet CarlistbottomSheetVC
+        view_DetailCollectionView.isHidden=false
 
+    }
+    
+// MARK:  CollectionView Animation In detailCarlist  Delegates Methods ---------------------------->
+    
+   
+    
+    
+    private func viewConfigrations() {
+        
+        collectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
+        collectionView.contentInset = UIEdgeInsetsMake(0, 30, 0, 30)
+        collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+    }
+    
+    func updateCellsLayout()  {
+        
+        let centerX = collectionView.contentOffset.x + (collectionView.frame.size.width)/2
+        for cell in collectionView.visibleCells {
+            var offsetX = centerX - cell.center.x
+            if offsetX < 0 {
+                offsetX *= -1
+            }
+            cell.transform = CGAffineTransform.identity
+            let offsetPercentage = offsetX / (view.bounds.width * 2.7)
+            let scaleX = 1-offsetPercentage
+            cell.transform = CGAffineTransform(scaleX: scaleX, y: scaleX)
+        }
+    }
+    
+
+    
 }
+
+// MARK:  CollectionView Animation In detailCarlist   View ---------------------------->
+
+extension HomeVc: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCell
+        print(index)
+       // cell.wallpaperImageView.image = UIImage(named: "\(indexPath.item)")
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        var cellSize: CGSize = collectionView.bounds.size
+        
+        cellSize.width -= collectionView.contentInset.left * 2
+        cellSize.width -= collectionView.contentInset.right * 2
+        cellSize.height = cellSize.width
+        
+        return cellSize
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateCellsLayout()
+    }
+    
+}
+
+
+

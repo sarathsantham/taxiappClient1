@@ -8,8 +8,15 @@
 
 import UIKit
 
-class AvailableCarListVc: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
- {
+
+protocol AvailableCarListVcDelegate: class {
+    func DidSelectAvailableCarList()
+}
+class AvailableCarListVc: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,CarlistCollectionViewCellDelegate
+{
+   
+    
+    weak var delegate: AvailableCarListVcDelegate?
     var leftInset = CGFloat()
      var rightInset = CGFloat()
     var selectedIndex = Int ()
@@ -62,6 +69,10 @@ class AvailableCarListVc: UIViewController,UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath as IndexPath) as! CarlistCollectionViewCell
+        cell.delegate = self
+        let index : NSInteger = indexPath.row
+        cell .DidSelectMethod(index: index)
+        
         if selectedIndex == indexPath.row
         {
             let yourImage: UIImage = UIImage(named: "taxi_default_active")!
@@ -100,13 +111,9 @@ class AvailableCarListVc: UIViewController,UICollectionViewDelegate,UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     // handle tap events
         selectedIndex = indexPath.row
-        self.view_collectionView.reloadData()
-
-       
+        collectionView.reloadData()
     }
-   
-   
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         let totalCellWidth = 114 * collectionView.numberOfItems(inSection: 0)
@@ -120,11 +127,16 @@ class AvailableCarListVc: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     
-    // MARK: - Button Action
+// MARK: - Delegate Method From CarlistCollectionViewCell
     
-    @IBAction func didclickCashButton(_ sender: Any) {
+    func DidSelectInfoButton(index : NSInteger) {
+        
+        
+        
     }
     
-    
+    @IBAction func didclickviewDetailButtons(_ sender: Any) {
+         self .delegate?.DidSelectAvailableCarList()
+    }
 }
 

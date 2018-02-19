@@ -21,7 +21,6 @@
 		CB1240282017382E00B71B87 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1240212017382E00B71B87 /* Constant.swift */; };
 		CB12402A2017386600B71B87 /* LoginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1240292017386600B71B87 /* LoginVc.swift */; };
 		CB12402D2017388400B71B87 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB12402C2017388400B71B87 /* DataHandler.swift */; };
-		CB235F0F202C34B20009C28A /* CarlistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB235F0E202C34B20009C28A /* CarlistCollectionViewCell.swift */; };
 		CB4E4B2C202880FF0073A186 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4E4B24202880FF0073A186 /* Quicksand-Bold.otf */; };
 		CB4E4B2D202880FF0073A186 /* Quicksand-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4E4B25202880FF0073A186 /* Quicksand-BoldItalic.otf */; };
 		CB4E4B2E202880FF0073A186 /* Quicksand-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB4E4B26202880FF0073A186 /* Quicksand-Italic.otf */; };
@@ -29,12 +28,17 @@
 		CB4F828F2029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4F82892029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib */; };
 		CB4F82932029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4F828D2029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift */; };
 		CB963CC12021C83A0031B451 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB963CC02021C83A0031B451 /* Utilities.swift */; };
-		CB963CC62021D0810031B451 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB963CC52021D0810031B451 /* Toast.swift */; };
 		CB963CC82021D6210031B451 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB963CC72021D6200031B451 /* Reachability.swift */; };
+		CBB1B8BA2035A2E0007F329B /* SocketInIt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB1B8B92035A2E0007F329B /* SocketInIt.swift */; };
 		CBB4DCA7202DA9CA00375C63 /* AvailableCarListVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB4DCA6202DA9CA00375C63 /* AvailableCarListVc.swift */; };
+		CBBC5A302031BDF100D64DDB /* FAPaginationLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBC5A2F2031BDF100D64DDB /* FAPaginationLayout.swift */; };
 		CBDBEB5A201C4BEF008FAA02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBDBEB59201C4BEF008FAA02 /* GoogleService-Info.plist */; };
 		CBDBEB5C201C57C5008FAA02 /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDBEB5B201C57C5008FAA02 /* HomeVc.swift */; };
 		CBDBEB5E201C8A05008FAA02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDBEB5D201C8A05008FAA02 /* ViewController.swift */; };
+		CBE2B74120340633001479E9 /* CarlistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2B74020340633001479E9 /* CarlistCollectionViewCell.swift */; };
+		CBE2B74620340709001479E9 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE2B74320340709001479E9 /* ImageCell.xib */; };
+		CBE2B74720340709001479E9 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2B74420340709001479E9 /* ImageCell.swift */; };
+		CBE5EBE7203710DE00DF3ADC /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE5EBE6203710DE00DF3ADC /* DTTextField.swift */; };
 		CBFAE38520207A82001A6157 /* ARCarMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFAE38420207A82001A6157 /* ARCarMovement.swift */; };
 		CBFE2812202AE83A00170DDD /* BottomSheetInitialSheetVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFE2810202AE83A00170DDD /* BottomSheetInitialSheetVc.swift */; };
 		CBFE2813202AE83A00170DDD /* BottomSheetInitialSheetVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFE2811202AE83A00170DDD /* BottomSheetInitialSheetVc.xib */; };
@@ -82,7 +86,6 @@
 		CB12402C2017388400B71B87 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		CB235F0B202C280C0009C28A /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
 		CB235F0C202C280C0009C28A /* Muli.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Muli.ttf; sourceTree = "<group>"; };
-		CB235F0E202C34B20009C28A /* CarlistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarlistCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB4E4B24202880FF0073A186 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		CB4E4B25202880FF0073A186 /* Quicksand-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-BoldItalic.otf"; sourceTree = "<group>"; };
 		CB4E4B26202880FF0073A186 /* Quicksand-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Italic.otf"; sourceTree = "<group>"; };
@@ -90,12 +93,17 @@
 		CB4F82892029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollableBottomSheetViewController.xib; sourceTree = "<group>"; };
 		CB4F828D2029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollableBottomSheetViewController.swift; sourceTree = "<group>"; };
 		CB963CC02021C83A0031B451 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		CB963CC52021D0810031B451 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		CB963CC72021D6200031B451 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		CBB1B8B92035A2E0007F329B /* SocketInIt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketInIt.swift; sourceTree = "<group>"; };
 		CBB4DCA6202DA9CA00375C63 /* AvailableCarListVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCarListVc.swift; sourceTree = "<group>"; };
+		CBBC5A2F2031BDF100D64DDB /* FAPaginationLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAPaginationLayout.swift; sourceTree = "<group>"; };
 		CBDBEB59201C4BEF008FAA02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CBDBEB5B201C57C5008FAA02 /* HomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
 		CBDBEB5D201C8A05008FAA02 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBE2B74020340633001479E9 /* CarlistCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarlistCollectionViewCell.swift; path = DetailCarListCollectionViewCell/CarlistCollectionViewCell.swift; sourceTree = "<group>"; };
+		CBE2B74320340709001479E9 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		CBE2B74420340709001479E9 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		CBE5EBE6203710DE00DF3ADC /* DTTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		CBFAE38420207A82001A6157 /* ARCarMovement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARCarMovement.swift; sourceTree = "<group>"; };
 		CBFE2810202AE83A00170DDD /* BottomSheetInitialSheetVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetInitialSheetVc.swift; sourceTree = "<group>"; };
 		CBFE2811202AE83A00170DDD /* BottomSheetInitialSheetVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetInitialSheetVc.xib; sourceTree = "<group>"; };
@@ -212,6 +220,7 @@
 			children = (
 				CBDBEB5D201C8A05008FAA02 /* ViewController.swift */,
 				CB123FE7201737B300B71B87 /* AppDelegate.swift */,
+				CBB1B8B92035A2E0007F329B /* SocketInIt.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -231,7 +240,6 @@
 		CB124017201737F400B71B87 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
-				CB235F0A202C1CFE0009C28A /* CarlistVc */,
 				CB4F82872029F63F00C16BC5 /* BottomSheetVc */,
 				CB1240292017386600B71B87 /* LoginVc.swift */,
 				CBDBEB5B201C57C5008FAA02 /* HomeVc.swift */,
@@ -242,6 +250,8 @@
 		CB1240182017380200B71B87 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				CBE5EBE6203710DE00DF3ADC /* DTTextField.swift */,
+				CBBC5A2E2031BDF100D64DDB /* CollectionViewAnimationHorizantal */,
 				CB4E4B23202880FF0073A186 /* quicksand */,
 				CB963CC42021D05F0031B451 /* Catigories */,
 				CB963CC02021C83A0031B451 /* Utilities.swift */,
@@ -269,18 +279,12 @@
 			path = DataHandler;
 			sourceTree = "<group>";
 		};
-		CB235F0A202C1CFE0009C28A /* CarlistVc */ = {
-			isa = PBXGroup;
-			children = (
-				CBB4DCA6202DA9CA00375C63 /* AvailableCarListVc.swift */,
-			);
-			path = CarlistVc;
-			sourceTree = "<group>";
-		};
 		CB235F0D202C346F0009C28A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CB235F0E202C34B20009C28A /* CarlistCollectionViewCell.swift */,
+				CBE2B74420340709001479E9 /* ImageCell.swift */,
+				CBE2B74320340709001479E9 /* ImageCell.xib */,
+				CBE2B74020340633001479E9 /* CarlistCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +305,7 @@
 		CB4F82872029F63F00C16BC5 /* BottomSheetVc */ = {
 			isa = PBXGroup;
 			children = (
+				CBB4DCA6202DA9CA00375C63 /* AvailableCarListVc.swift */,
 				CB4F828D2029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift */,
 				CB4F82892029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib */,
 				CBFE2810202AE83A00170DDD /* BottomSheetInitialSheetVc.swift */,
@@ -313,9 +318,16 @@
 			isa = PBXGroup;
 			children = (
 				CB963CC72021D6200031B451 /* Reachability.swift */,
-				CB963CC52021D0810031B451 /* Toast.swift */,
 			);
 			path = Catigories;
+			sourceTree = "<group>";
+		};
+		CBBC5A2E2031BDF100D64DDB /* CollectionViewAnimationHorizantal */ = {
+			isa = PBXGroup;
+			children = (
+				CBBC5A2F2031BDF100D64DDB /* FAPaginationLayout.swift */,
+			);
+			path = CollectionViewAnimationHorizantal;
 			sourceTree = "<group>";
 		};
 		F9E81E365441A501EF26F68B /* Frameworks */ = {
@@ -445,6 +457,7 @@
 				CB0126E02019BDAE00C5935C /* CallingCodes.plist in Resources */,
 				CB4F828F2029F67B00C16BC5 /* ScrollableBottomSheetViewController.xib in Resources */,
 				CB4E4B2D202880FF0073A186 /* Quicksand-BoldItalic.otf in Resources */,
+				CBE2B74620340709001479E9 /* ImageCell.xib in Resources */,
 				CBDBEB5A201C4BEF008FAA02 /* GoogleService-Info.plist in Resources */,
 				CB123FED201737B300B71B87 /* Main.storyboard in Resources */,
 				CB4E4B31202880FF0073A186 /* Quicksand-Regular.otf in Resources */,
@@ -548,17 +561,20 @@
 			files = (
 				CB4F82932029F67B00C16BC5 /* ScrollableBottomSheetViewController.swift in Sources */,
 				CBDBEB5C201C57C5008FAA02 /* HomeVc.swift in Sources */,
+				CBB1B8BA2035A2E0007F329B /* SocketInIt.swift in Sources */,
+				CBBC5A302031BDF100D64DDB /* FAPaginationLayout.swift in Sources */,
+				CBE2B74120340633001479E9 /* CarlistCollectionViewCell.swift in Sources */,
 				CB123FE8201737B300B71B87 /* AppDelegate.swift in Sources */,
 				CBFE2812202AE83A00170DDD /* BottomSheetInitialSheetVc.swift in Sources */,
 				CBFAE38520207A82001A6157 /* ARCarMovement.swift in Sources */,
 				CB0126E32019CEE100C5935C /* MICountryPicker.swift in Sources */,
+				CBE2B74720340709001479E9 /* ImageCell.swift in Sources */,
 				CB12402A2017386600B71B87 /* LoginVc.swift in Sources */,
 				CBDBEB5E201C8A05008FAA02 /* ViewController.swift in Sources */,
-				CB235F0F202C34B20009C28A /* CarlistCollectionViewCell.swift in Sources */,
 				CB963CC12021C83A0031B451 /* Utilities.swift in Sources */,
 				CB963CC82021D6210031B451 /* Reachability.swift in Sources */,
-				CB963CC62021D0810031B451 /* Toast.swift in Sources */,
 				CB1240282017382E00B71B87 /* Constant.swift in Sources */,
+				CBE5EBE7203710DE00DF3ADC /* DTTextField.swift in Sources */,
 				CB12402D2017388400B71B87 /* DataHandler.swift in Sources */,
 				CBB4DCA7202DA9CA00375C63 /* AvailableCarListVc.swift in Sources */,
 			);

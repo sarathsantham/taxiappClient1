@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/BottomSheetVc/ScrollableBottomSheetViewController.swift"
-            timestampString = "539963428.214781"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.813116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "gestureRecognizer(_:shouldRecognizeSimultaneouslyWith:)"
+            startingLineNumber = "750"
+            endingLineNumber = "750"
+            landmarkName = "CheckOldCustomerPassword()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/BottomSheetVc/ScrollableBottomSheetViewController.swift"
-            timestampString = "539963428.214859"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.813552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "panGesture(_:)"
+            startingLineNumber = "724"
+            endingLineNumber = "724"
+            landmarkName = "CustomerProfileUpdate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/BottomSheetVc/ScrollableBottomSheetViewController.swift"
-            timestampString = "539963428.214919"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.813838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "panGesture(_:)"
+            startingLineNumber = "544"
+            endingLineNumber = "544"
+            landmarkName = "MobileNoVerification()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/HomeVc.swift"
-            timestampString = "540106890.83951"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.814133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "textFieldDidBeginEditing(_:)"
+            startingLineNumber = "584"
+            endingLineNumber = "584"
+            landmarkName = "MobileNoVerification()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.NSDictionary) -&gt; () in EQTaxi.LoginVc.MobileNoVerification() -&gt; ()"
+                  moduleName = "EQTaxi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/employeelogin/Documents/sarathSwiftProject/EQTaxi/EQTaxi/Controler/LoginVc.swift"
+                  timestampString = "540546411.233004"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "2152">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.NSDictionary) -&gt; () in EQTaxi.LoginVc.MobileNoVerification() -&gt; ()"
+                  moduleName = "EQTaxi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/employeelogin/Documents/sarathSwiftProject/EQTaxi/EQTaxi/Controler/LoginVc.swift"
+                  timestampString = "540546411.2349451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "584"
+                  endingLineNumber = "584"
+                  offsetFromSymbolStart = "8736">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.814418"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
+            landmarkName = "firstImageLoading(button:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/BottomSheetVc/ScrollableBottomSheetViewController.swift"
-            timestampString = "539963428.2150379"
+            filePath = "EQTaxi/Utilities/Menu/ENSideMenu.swift"
+            timestampString = "540478705.883628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "panGesture(_:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "toggleSideMenuView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/BottomSheetVc/ScrollableBottomSheetViewController.swift"
-            timestampString = "539963428.215093"
+            filePath = "EQTaxi/Utilities/Menu/ENSideMenu.swift"
+            timestampString = "540478705.883674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "panGesture(_:)"
+            landmarkName = "sideMenuController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/CarlistVc.swift"
-            timestampString = "539782634.612307"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.814744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
+            landmarkName = "CheckOldCustomerPassword()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/CarlistVc.swift"
-            timestampString = "539782634.612381"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.815028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidAppear(_:)"
+            startingLineNumber = "574"
+            endingLineNumber = "574"
+            landmarkName = "MobileNoVerification()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,13 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/CarlistVc.swift"
-            timestampString = "539782634.612444"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.815304"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "collectionView(_:layout:insetForSectionAtinsetForSectionAt:)"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
+            landmarkName = "VerifyOTPServiceCall()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -153,93 +201,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/CarlistVc.swift"
-            timestampString = "539782634.612506"
+            filePath = "EQTaxi/Controler/LoginVc.swift"
+            timestampString = "540546410.81557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/AvailableCarListVc.swift"
-            timestampString = "539963428.2152261"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/AvailableCarListVc.swift"
-            timestampString = "539963428.21561"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/HomeVc.swift"
-            timestampString = "540106890.840104"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
-            landmarkName = "showPath(polyStr:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/AvailableCarListVc.swift"
-            timestampString = "539963428.21619"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "collectionView(_:layout:insetForSectionAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EQTaxi/Controler/CarlistVc/AvailableCarListVc.swift"
-            timestampString = "539963428.2164921"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "645"
+            endingLineNumber = "645"
+            landmarkName = "VerifyOTPServiceCall()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

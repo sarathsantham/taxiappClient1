@@ -18,9 +18,8 @@ let kIphone_6_Plus : Bool =  (UIScreen.main.bounds.size.height == 736)
 
 
 //  BaseURL
-
 //LocalURl
-let kBaseUrl = "http://192.168.50.23/eqtaxi_service/api/"
+let kBaseUrl = "http://192.168.50.23/eqtaxi_service/mobile/"
 let kSocketUrl = "192.168.50.25"
 
 //ServerURl
@@ -36,11 +35,15 @@ let kGoogleAPIKey = "AIzaSyAT6PAk4r4JpHcXbyR_Ginyx58-KB_cSvA"
 
 //Suburls
 
-let kLogin = "sendOTP"
-let kVerifyOTP  = "verifyOTP"
+let kLogin = "verifyCustomerMobileNumber"
+let kVerifyOTP  = "verifyCustomerOTPCode"
+let KSetNewPassword = "setUserPassword"
+let KProfileRegUpdate = "customerProfileUpdate"
+let KCheckOldUserPassword = "verifyCustomerPassword"
+
+
 let KgetAvailableVehicleType = "getAvailableVehicleType"
 let kImageurl = "uploadImage"
-let KProfileRegUpdate = "userProfileUpdate"
 let KProfileAddressupdate = "addOrUpdatePersonalInfo"
 let KDriverProfileReg = "addDriverInfo"
 let KVehileInfoUpdate = "addOrUpdateVehicleInfo"
