@@ -14,12 +14,11 @@ import CoreLocation
 import Alamofire
 import SwiftyJSON
 import SocketCluster_ios_client
-class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITextFieldDelegate,AvailableCarListVcDelegate{
+class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITextFieldDelegate,AvailableCarListVcDelegate,BottomSheetLocationDelegate{
     
-    
-   
-    
-   
+    var  resultsArray_Lat_long = NSMutableArray()
+    var  resultsArray_Detail = NSMutableArray()
+    var  resultsArray = NSMutableArray()
     var str_isStart_End_Picker = NSString()
     var dub_LatitudeStart = Double()
     var dub_LongitudeStart = Double()
@@ -102,9 +101,6 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
         
        self .AddGoogleMapColour()
         
-     // GetCurrent Place Name In Map
-        
-       self .GetCurrentPlaceNameWithLatLong(cameraPosition: false)
         
     }
     
@@ -119,8 +115,87 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     }
     
 // MARK: TextField Delegates ------------------------->
-    
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        if string.count == 0
+        {
+            if textField==txt_endlocation  || textField==txt_startLocation {
+                var text = NSString ()
+                if str_isStart_End_Picker == "StartLocation"{
+                 text = txt_startLocation.text! as NSString
+                }
+                if str_isStart_End_Picker == "EndLocation"{
+                     text = txt_endlocation.text! as NSString
+                }
+                if (text.length == 1){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+                        self.resultsArray.removeAllObjects()
+                        self.resultsArray_Lat_long.removeAllObjects()
+                        self.resultsArray_Detail.removeAllObjects()
+                        self.bottomSheetLocationVC.GetResult(array: self.resultsArray, detailarray: self.resultsArray_Detail )
+                        self.bottomSheetLocationVC.HideTableView()
+                    }
+
+                }else{
+                    let placesClient = GMSPlacesClient()
+                    placesClient.autocompleteQuery(text as String, bounds: nil, filter: nil, callback: { (result, error) -> Void in
+                        self.resultsArray.removeAllObjects()
+                        self.resultsArray_Lat_long.removeAllObjects()
+                        self.resultsArray_Detail.removeAllObjects()
+
+                        if result == nil {
+                            return
+                        }else{
+                            for value in result!{
+                                if let value = value as? GMSAutocompletePrediction{
+                                    self.resultsArray .add(value.attributedPrimaryText.string)
+                                    self.resultsArray_Detail.add(value.attributedSecondaryText?.string as Any)
+                                     self.resultsArray_Lat_long .add(value.placeID!)
+                                       print(self.resultsArray_Detail)                                }
+                                
+//                                self.resultsArray .add(value.attributedFullText.string)
+//                                self.resultsArray_Lat_long .add(value.placeID!)
+                               
+                            }
+                            self.bottomSheetLocationVC.GetResult(array: self.resultsArray, detailarray: self.resultsArray_Detail )
+                        }
+                    })
+                }
+                }
+            }
+        
+        if ( textField ==  txt_endlocation  || textField==txt_startLocation){
+            self.bottomSheetLocationVC.ShowTableView()
+              let placesClient = GMSPlacesClient()
+            var text = NSString ()
+            if str_isStart_End_Picker == "StartLocation"{
+                text = txt_startLocation.text! as NSString
+            }
+            if str_isStart_End_Picker == "EndLocation"{
+                text = txt_endlocation.text! as NSString
+            }
+            placesClient.autocompleteQuery(text as String, bounds: nil, filter: nil, callback: { (result, error) -> Void in
+                self.resultsArray.removeAllObjects()
+                self.resultsArray_Lat_long.removeAllObjects()
+                self.resultsArray_Detail.removeAllObjects()
+
+                if result == nil {
+                    return
+                }else{
+                    for value in result!{
+                        if let value = value as? GMSAutocompletePrediction{
+                            self.resultsArray .add(value.attributedPrimaryText.string)
+                            self.resultsArray_Detail.add(value.attributedSecondaryText?.string as Any)
+                            self.resultsArray_Lat_long .add(value.placeID!)
+                            print(self.resultsArray_Detail)
+                        }
+                    }
+                    self.bottomSheetLocationVC.GetResult(array: self.resultsArray, detailarray: self.resultsArray_Detail )
+                }
+            })
+        }
+        return true
+    }
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
@@ -128,14 +203,19 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
+        addBottomSheetViewRemove(view1: bottomSheetLocationVC)
+        addBottomSheetViewLocation(scrollable: true)
         if textField == txt_startLocation{
             str_isStart_End_Picker = "StartLocation"
-            self .dismissKeyboard()
+            self.resultsArray.removeAllObjects()
+            self.resultsArray_Lat_long.removeAllObjects()
+           // self .dismissKeyboard()
         }
         if textField == txt_endlocation{
             str_isStart_End_Picker = "EndLocation"
-            self .dismissKeyboard()
-
+            self.resultsArray.removeAllObjects()
+            self.resultsArray_Lat_long.removeAllObjects()
+          //  self .dismissKeyboard()
 
         }
     }
@@ -158,6 +238,9 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
         let height = view.frame.height
         let width  = view.frame.width
         bottomSheetLocationVC.view.frame = CGRect(x:0, y: self.view.frame.maxY, width: width, height: height)
+        bottomSheetLocationVC.delegate = self
+
+       
     }
     
     // MARK: BottomSheet Remove  ---------------------------->
@@ -321,7 +404,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
             if let placeLikelihoodList = placeLikelihoodList {
                 let place = placeLikelihoodList.likelihoods.first?.place
                 if let place = place {
-                    self.txt_startLocation.text = "    " + (place.formattedAddress?.components(separatedBy: ", ")
+                    self.txt_startLocation.text = (place.formattedAddress?.components(separatedBy: ", ")
                         .joined(separator: "\n"))!
                     self.dub_LatitudeStart=place.coordinate.latitude
                     self.dub_LongitudeStart=place.coordinate.longitude
@@ -333,6 +416,44 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
         })
     }
     
+    
+// MARK: Get Latitude and Longitude by Sending Place Id ---------------------------->
+
+    func GetplaceByPlaceId(placeId : NSString)  {
+        
+        placesClient.lookUpPlaceID(placeId as String, callback: { (place, error) -> Void in
+            if let error = error {
+                print("lookup place id query error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let place = place else {
+                print("No place details for \(placeId)")
+                return
+            }
+            
+            if self.str_isStart_End_Picker == "StartLocation"{
+                self.dub_LatitudeStart=place.coordinate.latitude
+                self.dub_LongitudeStart=place.coordinate.longitude
+                let camera = GMSCameraPosition.camera(withLatitude: (self.dub_LatitudeStart), longitude: (self.dub_LongitudeStart), zoom: 15)
+                self.view_map?.animate(to: camera)
+                self.txt_startLocation.text = place.formattedAddress
+            }
+            if self.str_isStart_End_Picker == "EndLocation"{
+                self.dub_LatitudeEnd=place.coordinate.latitude
+                self.dub_LongitudeEnd=place.coordinate.longitude
+                let camera = GMSCameraPosition.camera(withLatitude: (self.dub_LatitudeEnd), longitude: (self.dub_LongitudeEnd), zoom: 15)
+                self.view_map?.animate(to: camera)
+                self.txt_endlocation.text = place.formattedAddress
+                if self.txt_startLocation.text != ""{
+                    self.DoneButtonMethodCall()
+                    //remove bottom sheet location
+                    self.addBottomSheetViewRemove(view1: self.bottomSheetLocationVC)
+                }
+
+            }
+        })
+    }
     
 // MARK: GetCurrent Location Marker And camera Zoom to It (Delegate Method Default) ---------------------------->
     
@@ -455,7 +576,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
             }
             
             if let result = response?.firstResult() {
-                if self.str_isStart_End_Picker == ""{
+                if self.str_isStart_End_Picker == "" {
                 }
                 else{
                     self .addBottomSheetViewRemove(view1:self.bottomSheetLocationVC )
@@ -465,7 +586,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
                         let camera = GMSCameraPosition.camera(withLatitude: (self.dub_LatitudeStart), longitude: (self.dub_LongitudeStart), zoom: 15)
                         self.view_map?.animate(to: camera)
                         let address : String = result.lines![0] + "," + result.lines![1]
-                         self.txt_startLocation.text = "   " + address
+                         self.txt_startLocation.text =  address
                     }
                     if self.str_isStart_End_Picker == "EndLocation"{
                         self.dub_LatitudeEnd=result.coordinate.latitude
@@ -473,7 +594,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
                         let camera = GMSCameraPosition.camera(withLatitude: (self.dub_LatitudeEnd), longitude: (self.dub_LongitudeEnd), zoom: 15)
                             self.view_map?.animate(to: camera)
                         let address : String = result.lines![0] + "," + result.lines![1]
-                         self.txt_endlocation.text = "   " + address
+                         self.txt_endlocation.text =  address
                     }
                
                 }
@@ -489,16 +610,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
         {
         }
         else{
-            button_doneFordrawPolyLine.isHidden=true
-            img_centerpin.isHidden=true
-            view_TopStart_EndLocation.isHidden=true
-            str_isStart_End_Picker = ""
-            button_menu.setImage(UIImage(named: "backArrow(Black).png"), for: .normal)
-            view_Top_End.isHidden=true
-             self .DrawPoliLineInMap()
-            self.CarlistbottomSheetVC = (self.storyboard?.instantiateViewController(withIdentifier: "AvailableCarListVcID"))! as! AvailableCarListVc
-            self.addBottomSheetViewMessage(view2: self.CarlistbottomSheetVC)
-            CarlistbottomSheetVC.delegate=self
+            DoneButtonMethodCall()
         }
     }
     
@@ -511,7 +623,11 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
         view_TopStart_EndLocation.isHidden=false
         img_centerpin.isHidden=false
         button_doneFordrawPolyLine.isHidden=false
-
+         txt_endlocation .text = ""
+        
+        // GetCurrent Place Name In Map
+        
+        self .GetCurrentPlaceNameWithLatLong(cameraPosition: false)
         
         //remove bottom sheet message
         self .addBottomSheetViewRemove(view1: bottomSheetMessageVC)
@@ -602,6 +718,21 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
          CurrentLocation()
 
     }
+    // For Done button Method call For Optimization ----------------
+
+    func DoneButtonMethodCall() {
+        button_doneFordrawPolyLine.isHidden=true
+        img_centerpin.isHidden=true
+        view_TopStart_EndLocation.isHidden=true
+        str_isStart_End_Picker = ""
+        button_menu.setImage(UIImage(named: "backArrow(Black).png"), for: .normal)
+        view_Top_End.isHidden=true
+        self .DrawPoliLineInMap()
+        self.CarlistbottomSheetVC = (self.storyboard?.instantiateViewController(withIdentifier: "AvailableCarListVcID"))! as! AvailableCarListVc
+        self.addBottomSheetViewMessage(view2: self.CarlistbottomSheetVC)
+        CarlistbottomSheetVC.delegate=self
+    }
+    
     
   // update Current Location in map
     
@@ -610,18 +741,28 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
     }
     
     
-// Delegate Methods (OverAll) ---------------------------------------
+//  MARK:  Delegate Methods (OverAll) ---------------------------------------
     
-// AvailableCarList Delegate Methods ----------------
+    //AvailableCarList Delegate Methods ----------------
     
     func DidSelectAvailableCarList() {
         
         //remove bottom sheet message
-        self .addBottomSheetViewRemove(view1: CarlistbottomSheetVC)
-        
-        //add bottom sheet CarlistbottomSheetVC
-        view_DetailCollectionView.isHidden=false
-
+            self .addBottomSheetViewRemove(view1: CarlistbottomSheetVC)
+            
+            //add bottom sheet CarlistbottomSheetVC
+            view_DetailCollectionView.isHidden=false
+       
+    }
+    //locationBottomSheet Delegate Methods -------------------------->
+    func DidSelectLocation(index : NSInteger) {
+        dismissKeyboard()
+        self .GetplaceByPlaceId(placeId: resultsArray_Lat_long .object(at: index) as! NSString)
+        addBottomSheetViewRemove(view1: bottomSheetLocationVC)
+        addBottomSheetViewLocation(scrollable: true)
+    }
+    func DismisskeyboardFromHomeVc(){
+        dismissKeyboard()
     }
     
 // MARK:  CollectionView Animation In detailCarlist  Delegates Methods ---------------------------->
@@ -650,8 +791,7 @@ class HomeVc: UIViewController,CLLocationManagerDelegate,GMSMapViewDelegate,UITe
             cell.transform = CGAffineTransform(scaleX: scaleX, y: scaleX)
         }
     }
-    
-
+  
     
 }
 
@@ -661,7 +801,7 @@ extension HomeVc: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -686,6 +826,7 @@ extension HomeVc: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateCellsLayout()
     }
+    
     
 }
 

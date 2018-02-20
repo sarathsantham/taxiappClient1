@@ -43,26 +43,30 @@
                             <color key="textColor" red="0.21176470589999999" green="0.22352941179999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="history-50" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-7s-EoA">
-                            <rect key="frame" x="16" y="23" width="30" height="30"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="history-50" translatesAutoresizingMaskIntoConstraints="NO" id="cFp-pG-yoD">
+                            <rect key="frame" x="15" y="64" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TOt-wb-Zem">
-                            <rect key="frame" x="0.0" y="99" width="320" height="469"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="history-50" translatesAutoresizingMaskIntoConstraints="NO" id="U0u-7s-EoA">
+                            <rect key="frame" x="15" y="26" width="25" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TOt-wb-Zem">
+                            <rect key="frame" x="0.0" y="23" width="320" height="545"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="320" id="cin-Ds-UVk"/>
-                                <constraint firstAttribute="height" constant="469" id="vpb-zR-niM"/>
+                                <constraint firstAttribute="height" constant="545" id="vpb-zR-niM"/>
                             </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="Jej-Co-6ME"/>
+                                <outlet property="delegate" destination="-1" id="qFb-81-zHc"/>
+                            </connections>
                         </tableView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="history-50" translatesAutoresizingMaskIntoConstraints="NO" id="cFp-pG-yoD">
-                            <rect key="frame" x="16" y="61" width="30" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="TOt-wb-Zem" firstAttribute="top" secondItem="3Mg-7K-xJL" secondAttribute="top" constant="99" id="9NW-uj-zR7"/>
+                        <constraint firstItem="TOt-wb-Zem" firstAttribute="top" secondItem="3Mg-7K-xJL" secondAttribute="top" constant="23" id="9NW-uj-zR7"/>
                         <constraint firstAttribute="trailing" secondItem="TOt-wb-Zem" secondAttribute="trailing" id="KWv-yz-QHi"/>
                         <constraint firstAttribute="height" constant="568" id="Xai-r4-Xag"/>
                         <constraint firstAttribute="width" constant="320" id="YFm-SW-NKC"/>

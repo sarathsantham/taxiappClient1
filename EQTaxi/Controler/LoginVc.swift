@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Firebase
+import GooglePlaces
 class LoginVc: UIViewController,UITextFieldDelegate  {
     
     var str_Back_Status : String?
@@ -67,9 +68,9 @@ class LoginVc: UIViewController,UITextFieldDelegate  {
     var str_dialdCode = String()
     var str_stoploader = String()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         UserDefaults.standard.removeObject(forKey: "Token")
          //Initial Country Setup
@@ -86,7 +87,7 @@ class LoginVc: UIViewController,UITextFieldDelegate  {
         lbl_entermobileNo.isHidden=true
         
     }
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -152,6 +153,14 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             button_MobileNoValidate.setImage(UIImage(named: "right-arrow-50.png"), for: .normal)
         }
     }
+        if textField==txt_password {
+            if self.str_Back_Status == "OldPassword"{
+                  let text = txt_password.text! as NSString
+                if (text.length == 1){
+                    button_Password.setImage(UIImage(named: "right-arrow-50.png"), for: .normal)
+                }
+            }
+        }
     if textField==txt_Otp1 {
         txt_commonOtpErrormessage.text=" "
     let text = txt_Otp1.text! as NSString
@@ -257,7 +266,12 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             button_registerverify.setImage(UIImage(named: "right-arrow-b-50.png"), for: .normal)
             
         }
-        
+        if textField==txt_password {
+            if self.str_Back_Status == "OldPassword"{
+            button_Password.setImage(UIImage(named: "right-arrow-b-50.png"), for: .normal)
+            }
+        }
+     
     }
     return true
     }
