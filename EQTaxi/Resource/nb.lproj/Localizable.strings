@@ -1,0 +1,97 @@
+/* 
+  Localizable.strings
+  EQTaxi
+
+  Created by Equator Technologies on 16/03/18.
+  Copyright © 2018 Equator Technologies. All rights reserved.
+*/
+//Login screen--->
+"Get moving with EQTaxi" = "Kom i gang og prai en taxi";
+"Enter your mobile number" = "Skriv inn mobilnummeret ditt ";
+"Lanuage - English" = "Lanuage - Norwegian";
+//OTP screen------>
+"Enter the 4-digit code sent to you at" = "Skriv inn den firesifrede koden som er sendt til deg på";
+"I didn't receive a code" = "Jeg har ikke fått en kode";
+
+//Password screen----->
+"What's your Password?" = "Opprett passordet ditt for å fortsette";
+"Password" = "passord";
+"Confirm Password" = "Bekreft passord";
+"Forget password" = "Glemt passord?";
+
+//New register screen----->
+"What's your name?" = "Fortell oss ditt navn for å fortsette";
+"First Name" = "Fornavn";
+"Last Name" = "Etternavn";
+
+//Home screen ------>
+"Where to?" = "Hvor skal du?";
+"Destination" = "DESTINASJON";
+"Start location" = "Startsted";
+
+//Available car screen----->
+"Popular" = "Velg biltype";
+"Cash" = "Kontanter";
+"No available cars" = "Ingen tilgjengelige biler";
+
+//Confirm pickup----->
+"Confirm your pickup " = "Bekreft hvor du vil hentes";
+"Confirm pickup" = "Bekreft henting";
+"Confirm pickup location" = "bekreft hentestedet";
+
+//Ripple effect screen----->
+"Swipe to Cancel" = "Sveip for å avbryte turen";
+
+//Driver details screen------>
+"Call driver" = "Ring sjåfør ";
+"Ride cancel" = "Avbryt Reise";
+
+//menu screen--->
+"     Book your ride" = "     Prai en taxi";
+"     Ride history" = "     Reisehistorikk";
+"     Help / Support" = "     Send e-post";
+"     Rate us" = "     Gi oss tilbakemelding ";
+"     Logout" = "     Logg ut";
+//Bottomsheet screen---->
+"School" = "Skole";
+"Home" = "Hjem";
+
+//Ridehistory screen------>
+"Ride history" = "Reisehistorikk";
+"Ride History Not Found !" = "Reisehistorikk ikke funnet! ";
+"PICK UP" = "HENT MEG";
+"DESTINATION" = "DESTINASJON";
+"RIDE FARE" = "REISEPRIS";
+
+//Message screen------->
+"Message" = "skjermmelding";
+
+//Internetconnection screen----->
+"OK" = "OK";
+"It looks like there was a problem completing your request. Please try again in a moment." = "Det ser ut til at det var et problem å fullføre forespørselen din. Vennligst prøv igjen om et øyeblikk.";
+"Oops, something went wrong" = "Oops! Noe gikk galt";
+
+//Ride invoice screen------>
+"Ride invoice" = "Ride invoice";
+"TOTAL FARE" = "Totalpris";
+"Pickup Location" = "Hentested";
+"Drop Location" = "Ankomstpunkt";
+"TOTAL DISTANCE" = "Total distanse";
+"TOTAL DURATION" = "Total varighet";
+"Base fare" = "Grunnpris";
+"Distance fare" = "Avstandspris";
+"Duration fare" = "Tidspris";
+"Done" = "Ferdig";
+"Waiting fare" = "Ventepris";
+"Waiting time" = "Ventetid";
+
+//Rating screen----->
+"Rate ride experiance" = "Ranger turopplevelse";
+"Rate it" = "Rangere det";
+"Love Happy Journey ?" = "Glad i hyggelige reiser?";
+"Show us your heart with 5 stars!" = "Vis litt kjærleik med 5 stjerner!";
+"For Driver" = "PÅ sjåfør";
+"For Car" = "PÅ bil";
+"For Experience" = "For erfaring";
+"Leave a Comment" = "Legg igjen en kommentar";
+

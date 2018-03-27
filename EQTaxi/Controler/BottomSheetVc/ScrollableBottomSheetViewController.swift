@@ -10,9 +10,8 @@ import UIKit
 protocol BottomSheetLocationDelegate: class {
     func DidSelectLocation(index : NSInteger)
     func DismisskeyboardFromHomeVc()
-    
 }
-class ScrollableBottomSheetViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
+class ScrollableBottomSheetViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var countryview: UIView!

@@ -9,7 +9,11 @@
 import UIKit
 
 class RideHistoryViewCellTableViewCell: UITableViewCell {
-
+    @IBOutlet var lbl_ridefare: UILabel!
+    @IBOutlet var lbl_drop: UILabel!
+    @IBOutlet var lbl_pickup: UILabel!
+    @IBOutlet var lbl_time: UILabel!
+    @IBOutlet var ibi_date: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

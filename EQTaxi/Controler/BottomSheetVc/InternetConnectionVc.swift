@@ -7,12 +7,18 @@
 //
 
 import UIKit
+protocol InternetVcDelegate: class {
+    func DidSelectOkButton()
+    
+}
 
 class InternetConnectionVc: UIViewController {
-
+    
+ weak var delegate: InternetVcDelegate?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
+          view.endEditing(true)
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +27,17 @@ class InternetConnectionVc: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didclickOkButton(_ sender: Any) {
+        self.delegate? .DidSelectOkButton()
     }
-    */
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.6, animations: { [weak self] in
+            self?.view.frame = CGRect(x: 0, y: 0, width: (self?.view.frame.width)!, height: (self?.view.frame.height)!)
+            
+            
+        })
+    }
 
 }

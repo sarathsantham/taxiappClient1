@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DAE9047CEC56FC487ACC9685B2401384"
+               BlueprintIdentifier = "63CADB02EB50AE9EB499584CB339BE37"
                BuildableName = "Pods_EQTaxi.framework"
                BlueprintName = "Pods-EQTaxi"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DAE9047CEC56FC487ACC9685B2401384"
+            BlueprintIdentifier = "63CADB02EB50AE9EB499584CB339BE37"
             BuildableName = "Pods_EQTaxi.framework"
             BlueprintName = "Pods-EQTaxi"
             ReferencedContainer = "container:Pods.xcodeproj">

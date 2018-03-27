@@ -11,15 +11,32 @@ import Firebase
 import UserNotifications
 import GoogleMaps
 import GooglePlaces
+import ScClient
+import Fabric
+import Crashlytics
+
+
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate,UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    var client = ScClient(url: kSocketUrl)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        Fabric.with([Crashlytics.self])
+        let userdefaults = UserDefaults.standard
+        if userdefaults.string(forKey: "Lanuage") != nil{
+            let lanuage = userdefaults.string(forKey: "Lanuage")
+            LanguageManger.shared.defaultLanguage = Languages(rawValue: lanuage!)!
+            
+        } else {
+              LanguageManger.shared.defaultLanguage = .en
+         }
+      
+
         // Internet Checking--------
 
         self .InternetVerification()
@@ -50,12 +67,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate,UNUserNo
         
         application.registerForRemoteNotifications()
         
-        // End code for FCM
+        // initialViewController ---------------------
         
+        LoadInitialViewController()
         
         return true
     }
 
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -71,6 +90,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate,UNUserNo
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        let status = client.isConnected()
+        if status == true{
+            
+        }else{
+            client.connect()
+        }
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
@@ -91,9 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate,UNUserNo
         } catch {
             print(error)
         }
-
     }
-    
     
 // MARK: firebase Push Service Delegate Methods --------------------------->
     
@@ -148,8 +171,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate,UNUserNo
         // With swizzling disabled you must set the APNs token here.
         // Messaging.messaging().apnsToken = deviceToken
     }
+    
+// MARK: Initial Loading ViewController ---------------------------------->
+    
+    func LoadInitialViewController()  {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let userdefaults = UserDefaults.standard
+        if userdefaults.string(forKey: "Token") != nil{
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "HomeVcID") as! HomeVc
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+
+        } else {
+            let viewController = storyBoard.instantiateViewController(withIdentifier: "LoginVcID") as! LoginVc
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
+
+        
+    }
 }
    
+
+
 
 
 

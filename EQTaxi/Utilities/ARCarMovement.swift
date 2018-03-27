@@ -30,9 +30,19 @@ extension FloatingPoint {
 
 public class ARCarMovement: NSObject {
 
+    var i : NSInteger = NSInteger ()
+   var arr = NSMutableArray ()
+  
     // MARK: Public properties
     public weak var delegate: ARCarMovementDelegate?
     public var duration: Float = 2.0
+    
+    
+    func showcar()  {
+        
+       
+    }
+    
     
     public func ARCarMovement(marker: GMSMarker, oldCoordinate: CLLocationCoordinate2D, newCoordinate:CLLocationCoordinate2D, mapView: GMSMapView, bearing: Float) {
     
@@ -70,5 +80,11 @@ public class ARCarMovement: NSObject {
         let degree: Float = (atan2(sin(tLng - fLng) * cos(tLat), cos(fLat) * sin(tLat) - sin(fLat) * cos(tLat) * cos(tLng - fLng))).radiansToDegrees
         return (degree >= 0) ? degree : (360 + degree)
     }
+   
+    
+    
+    
+    
+    
     
 }

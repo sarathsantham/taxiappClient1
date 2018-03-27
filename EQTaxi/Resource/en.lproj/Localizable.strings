@@ -1,0 +1,147 @@
+/* 
+  Localizable.strings
+  EQTaxi
+
+  Created by Equator Technologies on 16/03/18.
+  Copyright © 2018 Equator Technologies. All rights reserved.
+*/
+
+//Login screen--->
+"Get moving with EQTaxi" = "Get moving with Praitaxi";
+"Enter your mobile number" = "Enter your mobile number";
+"Lanuage - English" = "Lanuage - English";
+//OTP screen------>
+"Enter the 4-digit code sent to you at" = "Enter the 4-digit code sent to you at";
+"I didn't receive a code" = "I didn't receive a code";
+
+//Password screen----->
+"What's your Password?" = "What's your Password?";
+"Password" = "Password";
+"Confirm Password" = "Confirm Password";
+"Forget password " = "Forget password ";
+
+//New register screen----->
+"What's your name?" = "What's your name?";
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+
+//Home screen ------>
+"Where to?" = "Where to?";
+"Destination" = "Destination";
+"Start location" = "Start location";
+
+//Available car screen----->
+"Popular" = "Popular";
+"Cash" = "Cash";
+"No available cars" = "No available cars";
+
+//Confirm pickup----->
+"Confirm your pickup " = "Confirm your pickup";
+"Confirm pickup" = "Confirm pickup";
+"Confirm pickup location" = "Confirm pickup location";
+
+//Ripple effect screen----->
+"Swipe to Cancel" = "Swipe to Cancel";
+
+//Driver details screen------>
+"Call driver" = "Call driver";
+"Ride cancel" = "Ride cancel";
+
+//menu screen--->
+"     Book your ride" = "     Book your ride";
+"     Ride history" = "     Ride history";
+"     Help / Support" = "     Help / Support";
+"     Rate us" = "     Rate us";
+"     Logout" = "     Logout";
+//Bottomsheet screen---->
+"School" = "School";
+"Home" = "Home";
+
+//Ridehistory screen------>
+"Ride history" = "Ride history";
+"Ride History Not Found !" = "Ride History Not Found !";
+"PICK UP" = "PICK UP";
+"DESTINATION" = "DESTINATION";
+"RIDE FARE" = "RIDE FARE";
+
+//Message screen------->
+"Message" = "Message";
+
+//Internetconnection screen----->
+"OK" = "OK";
+"It looks like there was a problem completing your request. Please try again in a moment." = "It looks like there was a problem completing your request. Please try again in a moment.";
+"Oops, something went wrong" = "Oops, something went wrong";
+
+//Ride invoice screen------>
+"Ride invoice" = "Ride invoice";
+"TOTAL FARE" = "TOTAL FARE";
+"Pickup Location" = "Pickup Location";
+"Drop Location" = "Drop Location";
+"TOTAL DISTANCE" = "TOTAL DISTANCE";
+"TOTAL DURATION" = "TOTAL DURATION";
+"Base fare" = "Base fare";
+"Distance fare" = "Distance fare";
+"Duration fare" = "Duration fare";
+"Done" = "Done";
+"Waiting fare" = "Waiting fare";
+"Waiting time" = "Waiting time";
+
+//Rating screen----->
+"Rate ride experiance" = "Rate ride experiance";
+"Rate it" = "Rate it";
+"Love Happy Journey ?" = "Love Happy Journey ?";
+"Show us your heart with 5 stars!" = "Show us your heart with 5 stars!";
+"For Driver" = "For Driver";
+"For Car" = "For Car";
+"For Experience" = "For Experience";
+"Leave a Comment" = "Leave a Comment";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

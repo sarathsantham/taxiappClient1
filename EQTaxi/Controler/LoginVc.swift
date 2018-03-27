@@ -10,13 +10,12 @@ import UIKit
 import Alamofire
 import Firebase
 import GooglePlaces
-class LoginVc: UIViewController,UITextFieldDelegate  {
-    
+class LoginVc: UIViewController,UITextFieldDelegate,InternetVcDelegate  {
     var str_Back_Status : String?
-    
     
 // MARK: Reference outlet for View--------------->
     
+    @IBOutlet var view_Lanuage: UIView!
     @IBOutlet var view_password: UIView!
     @IBOutlet var view_BackGround: UIView!
     @IBOutlet var view_OTP: UIView!
@@ -51,10 +50,12 @@ class LoginVc: UIViewController,UITextFieldDelegate  {
     @IBOutlet var img_country: UIImageView!
     
     var objDatahandler : DataHandler  = DataHandler()
-    var objUtilities : Utilities = Utilities ()
-    
+    var objInternetVc : InternetConnectionVc = InternetConnectionVc ()
 // MARK: Reference outlet for Button--------------->
     
+    @IBOutlet var button_norrwanelanuage: UIButton!
+    @IBOutlet var button_englishLanuage: UIButton!
+    @IBOutlet var button_forgetPassword: UIButton!
     @IBOutlet var button_Password: UIButton!
     @IBOutlet var button_socialLogin: UIButton!
     @IBOutlet var button_MobileNoValidate: UIButton!
@@ -67,19 +68,22 @@ class LoginVc: UIViewController,UITextFieldDelegate  {
     var str_countryCode = String()
     var str_dialdCode = String()
     var str_stoploader = String()
+    var is_ForgetPassword = String()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+         view_Lanuage.isHidden=true
+        AddShadowTo(view_shadow: view_Lanuage)
+        objInternetVc.delegate=self
         UserDefaults.standard.removeObject(forKey: "Token")
          //Initial Country Setup
         
         let bundle = "assets.bundle/"
-        self.img_country!.image = UIImage(named: bundle + "in" + ".png", in: Bundle(for: MICountryPicker.self), compatibleWith: nil)
-        self.lbl_country.text = "+91"
-        self.str_dialdCode="+91"
-        self.str_countryCode="IN"
+        self.img_country!.image = UIImage(named: bundle + KCountryImage + ".png", in: Bundle(for: MICountryPicker.self), compatibleWith: nil)
+        self.lbl_country.text = KLabelCountry
+        self.str_dialdCode = KStrDialCode
+        self.str_countryCode = KStrCountryCode
         
         //Initial View Operations
         
@@ -99,6 +103,14 @@ class LoginVc: UIViewController,UITextFieldDelegate  {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    // MARK: Draw Shadow to view ---------------------------->
+    
+    func AddShadowTo (view_shadow:UIView) {
+        view_shadow.layer.shadowOpacity = 0.8
+        view_shadow.layer.shadowOffset = CGSize(width: 3, height: 3)
+        view_shadow.layer.shadowRadius = 8.0
+        view_shadow.layer.shadowColor = UIColor.darkGray.cgColor
+    }
 // MARK: TextField Delegates ------------------------->
    
     
@@ -109,8 +121,11 @@ class LoginVc: UIViewController,UITextFieldDelegate  {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key
     {
-        if textField==self.txt_mobileno{
-            self.txt_mobileno .resignFirstResponder()
+        if textField==self.txt_firstname{
+            self.txt_lastname .becomeFirstResponder()
+        }
+        if textField==self.txt_password{
+            self.txt_Confirmpassword .becomeFirstResponder()
         }
         return true
     }
@@ -251,7 +266,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     if textField==txt_mobileno {
         let count1 : String = txt_mobileno.text!
         let intCount : NSInteger = count1.count
-        if intCount <= 9{
+        if intCount <= 7{
             button_MobileNoValidate.setImage(UIImage(named: "right-arrow-b-50.png"), for: .normal)
             return true
         }else{
@@ -271,7 +286,6 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             button_Password.setImage(UIImage(named: "right-arrow-b-50.png"), for: .normal)
             }
         }
-     
     }
     return true
     }
@@ -279,23 +293,44 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
 
 // MARK: Button Actions--------------->
 
+    @IBAction func didclicklanuageconversionButton(_ sender: Any) {
+        view_Lanuage.isHidden=false
+    }
+    @IBAction func didclicknorwegionButton(_ sender: Any) {
+        // change the language
+         UserDefaults.standard.set(".nb", forKey: "Token")
+        LanguageManger.shared.setLanguage(language: .nb)
+        
+        // return to root view contoller and reload it
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+       button_norrwanelanuage.setTitle("Lanuage - Norwegian",for: .normal)
+         view_Lanuage.isHidden=true
+    }
+    @IBAction func didclickenglishButton(_ sender: Any) {
+        LanguageManger.shared.setLanguage(language: .en)
+          UserDefaults.standard.set(".en", forKey: "Token")
+        // return to root view contoller and reload it
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+         button_englishLanuage.setTitle("Lanuage - English",for: .normal)
+         view_Lanuage.isHidden=true
+    }
     @IBAction func didclickOpenpickerAction(_ sender: Any) {
         self .CountryPickerWhenClickingCountryPicker()
     }
     @IBAction func didclickRegistarSubmitButton(_ sender: Any) {
-        
         if txt_firstname.text == "" || txt_lastname.text == "" {
             if txt_firstname.text == ""{
                 txt_firstname.showError(message: "Enter first name")
             }else{
                 txt_lastname.showError(message: "Enter last name")
             }
-            
-
         }else{
                   CustomerProfileUpdate()
         }
-
     }
     @IBAction func didclickOTPResentButton(_ sender: Any) {
         
@@ -315,8 +350,14 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             
         }else{
             if  txt_password.text == txt_Confirmpassword.text{
-               
-                 SetPasswordServiceCall()
+                let count1 = txt_Confirmpassword.text!
+                if count1.count >= 6{
+                      SetPasswordServiceCall()
+                }
+                else{
+                     txt_Confirmpassword.showError(message: "Minimum 6 characters")
+                }
+              
                
             }else{
                 txt_Confirmpassword.showError(message: "password mismatched")
@@ -324,17 +365,13 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
         }
       
     }
-    
-   
     @IBAction func didclickOTPVerificationButton(_ sender: Any) {
     if txt_Otp1.text == "" || txt_otp2.text == "" || txt_otp3.text == "" || txt_otp4.text == "" {
        // txt_otp4.showError(message: "Enter OTP")
-            
     }else{
        self .VerifyOTPServiceCall()
         }
     }
-   
     @IBAction func didclickBackbutton(_ sender: Any) {
         if  str_Back_Status == "MobileNo"
         {
@@ -457,17 +494,78 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
         }
         else{
             let mobile_count : String = txt_mobileno.text!
-            if mobile_count.count == 10{
+            
+            if mobile_count.count == 8{
                 self .MobileNoVerification()
 
-            }else{
+           }else{
                  txt_mobileno.showError(message: "Enter valid mobile number")
             }
         }
     }
-    
+    @IBAction func didclickForgetPassword(_ sender: Any) {
+        
+        self.txt_Otp1 .becomeFirstResponder()
+        self.txt_Otp1.text=""
+        self.txt_otp2.text=""
+        self.txt_otp3.text=""
+        self.txt_otp4.text=""
+        self.lbl_OTPView_MobileNo.text=self.txt_mobileno.text
+        UIView .animate(withDuration: 0.3, animations: {
+            if (kIphone_4s) {
+                self.view_OTP.frame=CGRect(x: 0, y: 0, width: 320, height: 330)
+                 self.view_password.frame=CGRect(x: 320, y: 0, width: 320, height: 424)
+            }else if (kIphone_5){
+                self.view_OTP.frame=CGRect(x: 0, y: 0, width: 320, height: 390)
+                 self.view_password.frame=CGRect(x: 320, y: 0, width: 320, height: 502)
+            }else if (kIphone_6){
+                self.view_OTP.frame=CGRect(x: 0, y: 0, width: 375, height: 458)
+                self.view_password.frame=CGRect(x: 375, y: 0, width: 375, height: 589)
+            }else{
+                self.view_OTP.frame=CGRect(x: 0, y: 0, width: 414, height: 505)
+                self.view_password.frame=CGRect(x: 414, y: 0, width: 414, height: 650)
 
+            }
+        }, completion: nil)
+        
+        self.str_Back_Status = "OtpNo"
+        is_ForgetPassword = "ForgetPassword"
+    }
+    // MARK: Internet DelagateMethod  ------------------------------------->
+    
+    func DidSelectOkButton() {
+        RemoveChildVc(view1: objInternetVc)
+        let userdefaults = UserDefaults.standard
+        userdefaults .removeObject(forKey: "Token")
+        userdefaults .removeObject(forKey: "UserId")
+        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
+        let loginVc = storyboard1.instantiateViewController(withIdentifier: "LoginVcID") as! LoginVc
+        self.present(loginVc, animated:false, completion:nil)
+    }
+    // MARK: BottomSheet ADD  ---------------------------->
+    
+    func AddChildVc(view2:UIViewController) {
+        dismissKeyboard()
+        self.addChildViewController(view2)
+        self.view.addSubview(view2.view)
+        view2.didMove(toParentViewController: self)
+        let height = view.frame.height
+        let width  = view.frame.width
+        view2.view.frame = CGRect(x:0, y: self.view.frame.maxY, width: width, height: height)
+    }
+    // MARK: BottomSheet Remove  ---------------------------->
+    
+    func RemoveChildVc(view1 : UIViewController) {
+        view1.willMove(toParentViewController: nil)
+        view1.view.removeFromSuperview()
+        view1.removeFromParentViewController()
+        view1.removeFromParentViewController()
+    }
+    
 // MARK: Country Picker Delegate methods  ------------------------------------->
+    
+    
+    
     
 func CountryPickerWhenClickingCountryPicker()   {
     let picker = MICountryPicker { (name, code) -> () in
@@ -486,17 +584,17 @@ func CountryPickerWhenClickingCountryPicker()   {
     // or closure
     
     picker.didSelectCountryWithCallingCodeClosure = { name, code , dialCode in
-        picker.navigationController?.popToRootViewController(animated: true)
+       self.dismiss(animated: true, completion: nil)
         let bundle = "assets.bundle/"
         self.img_country!.image = UIImage(named: bundle + code.lowercased() + ".png", in: Bundle(for: MICountryPicker.self), compatibleWith: nil)
         self.lbl_country.text = dialCode
         self.str_countryCode=code
         self.str_dialdCode=dialCode
-        
+    self.txt_mobileno .becomeFirstResponder()
         print(code)
     }
     
-    navigationController?.pushViewController(picker, animated: true)
+     self.present(picker, animated:true, completion:nil)
     }
     
 // MARK: Login Service loader ------------------------------------------>
@@ -584,8 +682,7 @@ func CountryPickerWhenClickingCountryPicker()   {
         dic_inputValues["ip_address"] = ""
         dic_inputValues["device_os"] = "IOS"
         dic_inputValues["service"] = "login"
-        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: kLogin as NSString,methodtype:  "POST", classVc : self.view) { (  dic_data) in
-            print("FinalValue---------------------------", dic_data)
+        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: kLogin as NSString,methodtype:  "POST", classVc : self) { (  dic_data) in
             
             if (dic_data as AnyObject).count == 1 && dic_data["Message"] != nil
             {
@@ -593,7 +690,15 @@ func CountryPickerWhenClickingCountryPicker()   {
                 self.txt_password.showError(message: message)
                 self.str_stoploader = "0"
                 
-            }else{
+            }
+            else if (dic_data["InternetError"] != nil){
+                self.str_stoploader = "0"
+            }
+            else if (dic_data["InternalServerError"] != nil){
+                self.AddChildVc(view2: self.objInternetVc)
+                self.str_stoploader = "0"
+            }
+            else{
                 self.str_stoploader = "0"
                 let isnew : Bool = (dic_data["is_new"] as? Bool)!
                 if isnew == true{
@@ -605,7 +710,8 @@ func CountryPickerWhenClickingCountryPicker()   {
                     self.txt_otp2.text=""
                     self.txt_otp3.text=""
                     self.txt_otp4.text=""
-                    self.lbl_OTPView_MobileNo.text=self.txt_mobileno.text
+                    self.lbl_OTPView_MobileNo.text =  self.str_dialdCode
+                        + " " +  self.txt_mobileno.text!
                     UIView .animate(withDuration: 0.3, animations: {
                         if (kIphone_4s) {
                             self.view_OTP.frame=CGRect(x: 0, y: 0, width: 320, height: 330)
@@ -617,6 +723,7 @@ func CountryPickerWhenClickingCountryPicker()   {
                             self.view_OTP.frame=CGRect(x: 0, y: 0, width: 414, height: 505)
                         }
                     }, completion: nil)
+                   
                     self.str_Back_Status = "OtpNo"
                 }else{
                     UIView .animate(withDuration: 0.3, animations: {
@@ -636,13 +743,91 @@ func CountryPickerWhenClickingCountryPicker()   {
                     self.txt_password.text=""
                     self.txt_password .becomeFirstResponder()
                     self.txt_Confirmpassword.isHidden=true
+                    self.button_forgetPassword.isHidden=false
                     self.lbl_CofirmPassword.isHidden=true
                 }
+            }
+        }
+    }
+    func ForgetPassword()  {
+        self.str_stoploader = "1"
+        firstImageLoading(button: button_MobileNoValidate)
+        var dic_inputValues = [String : String]()
+        dic_inputValues["user_mobile_no"] = txt_mobileno.text
+        dic_inputValues["user_dial_code"] = self.str_dialdCode
+        dic_inputValues["user_role"] = "3"
+        dic_inputValues["user_country_code"] = self.str_countryCode
+        let fCMtoken = Messaging.messaging().fcmToken
+        dic_inputValues["user_fcm_id"] = fCMtoken ?? ""
+        var modelName = UIDevice.current.model
+        if modelName.isEqual("iPhone"){
+            if kIphone_4s{
+                modelName="iPhone4s"
+            };
+            if kIphone_5{
+                modelName="iPhone5s/iPhone5/iphoneSe"
+            };
+            if kIphone_6{
+                modelName="iPhone6s/iPhone6/iPhone7s/iPhone7/iPhone8"
+            };
+            if kIphone_6_Plus{
+                modelName="iPhone6sPlus/iPhone6Plus/iPhone7Plus"
+            }
+        }
+        dic_inputValues["device_name"] = modelName
+        let osVersion = UIDevice.current.systemVersion
+        dic_inputValues["device_os_version"] = osVersion
+        dic_inputValues["ip_address"] = ""
+        dic_inputValues["device_os"] = "IOS"
+        dic_inputValues["service"] = "login"
+        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: KForgetPasswordsentOtp as NSString,methodtype:  "POST", classVc : self) { (  dic_data) in
+            
+            if (dic_data as AnyObject).count == 1 && dic_data["Message"] != nil
+            {
+                let message = dic_data["Message"] as! String
+                self.txt_password.showError(message: message)
+                self.str_stoploader = "0"
+                
+            }
+            else if (dic_data["InternetError"] != nil){
+                self.str_stoploader = "0"
+            }
+            else if (dic_data["InternalServerError"] != nil){
+                self.AddChildVc(view2: self.objInternetVc)
+                self.str_stoploader = "0"
+            }
+                
+                
+            else{
+                self.txt_Otp1 .becomeFirstResponder()
+                self.txt_Otp1.text=""
+                self.txt_otp2.text=""
+                self.txt_otp3.text=""
+                self.txt_otp4.text=""
+                self.lbl_OTPView_MobileNo.text=self.txt_mobileno.text
+                UIView .animate(withDuration: 0.3, animations: {
+                    if (kIphone_4s) {
+                        self.view_OTP.frame=CGRect(x: 0, y: 0, width: 320, height: 330)
+                        self.view_password.frame=CGRect(x: 320, y: 0, width: 320, height: 424)
+                    }else if (kIphone_5){
+                        self.view_OTP.frame=CGRect(x: 0, y: 0, width: 320, height: 390)
+                        self.view_password.frame=CGRect(x: 320, y: 0, width: 320, height: 502)
+                    }else if (kIphone_6){
+                        self.view_OTP.frame=CGRect(x: 0, y: 0, width: 375, height: 458)
+                        self.view_password.frame=CGRect(x: 375, y: 0, width: 375, height: 589)
+                    }else{
+                        self.view_OTP.frame=CGRect(x: 0, y: 0, width: 414, height: 505)
+                        self.view_password.frame=CGRect(x: 414, y: 0, width: 414, height: 650)
+                        
+                    }
+                }, completion: nil)
+                
+                self.str_Back_Status = "OtpNo"
+                self.is_ForgetPassword = "ForgetPassword"
                 
             }
         }
     }
-    
     func VerifyOTPServiceCall()  {
         self.str_stoploader = "1"
         firstImageLoading(button: button_OTPNoValidate)
@@ -653,8 +838,7 @@ func CountryPickerWhenClickingCountryPicker()   {
         dic_inputValues["user_dial_code"] = self.str_dialdCode
         dic_inputValues["user_country_code"] = self.str_countryCode
         dic_inputValues["service"] = "login"
-        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: kVerifyOTP as NSString,methodtype:  "POST", classVc : self.view) { (  dic_data) in
-            print("FinalValue---------------------------", dic_data)
+        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: kVerifyOTP as NSString,methodtype:  "POST", classVc : self) { (  dic_data) in
             if (dic_data as AnyObject).count == 1{
                   let message = dic_data["Message"] as! String
                 if message == "OTP Verified!"{
@@ -674,8 +858,18 @@ func CountryPickerWhenClickingCountryPicker()   {
                         self.view_password.frame=CGRect(x: 0, y: 0, width: 414, height: 650)
                     }
                 }, completion: nil)
-                self.str_Back_Status = "NewPassword"
-            }
+                     self.button_forgetPassword.isHidden=true
+                    self.txt_Confirmpassword.isHidden=false
+                    self.lbl_CofirmPassword.isHidden=false
+                    self.str_Back_Status = "NewPassword"
+                }
+                else if (dic_data["InternetError"] != nil){
+                    self.str_stoploader = "0"
+                }
+                else if (dic_data["InternalServerError"] != nil){
+                    self.AddChildVc(view2: self.objInternetVc)
+                    self.str_stoploader = "0"
+                }
            else
             {
                 let message = dic_data["Message"] as! String
@@ -685,8 +879,6 @@ func CountryPickerWhenClickingCountryPicker()   {
         }
     }
     }
-    
-   
     func SetPasswordServiceCall()  {
         self.str_stoploader = "1"
         firstImageLoading(button: button_Password)
@@ -696,21 +888,32 @@ func CountryPickerWhenClickingCountryPicker()   {
         dic_inputValues["user_mobile_no"] = txt_mobileno.text
         dic_inputValues["user_password"] = txt_password.text
 
-        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: KSetNewPassword as NSString,methodtype:  "PUT", classVc : self.view) {
+        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: KSetNewPassword as NSString,methodtype:  "PUT", classVc : self) {
             (  dic_data) in
-            print("FinalValue---------------------------", dic_data)
             if (dic_data as AnyObject).count == 1 && dic_data["Message"] != nil{
                 let message = dic_data["Message"] as! String
                 self.txt_password.showError(message: message)
                 self.str_stoploader = "0"
                 
             }
+            else if (dic_data["InternetError"] != nil){
+                self.str_stoploader = "0"
+            }
+            else if (dic_data["InternalServerError"] != nil){
+                self.AddChildVc(view2: self.objInternetVc)
+                self.str_stoploader = "0"
+            }
             else{
                  self.str_stoploader = "0"
                 let token = dic_data["user_auth_token"] as! String
                 let userId = dic_data["pk_user_id"]
                 UserDefaults.standard.set(userId, forKey: "UserId") //setObject
-                UserDefaults.standard.set(token, forKey: "Token") //setObject
+                UserDefaults.standard.set(token, forKey: "Token")//setObject
+                if self.is_ForgetPassword == "ForgetPassword"{
+                    self.str_stoploader = "0"
+                    let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVcID") as! HomeVc
+                    self.present(homeVc, animated:false, completion:nil)
+                }else{
                                 self.txt_firstname .becomeFirstResponder()
                                 self.txt_firstname.text = ""
                                 self.txt_lastname.text = ""
@@ -727,6 +930,7 @@ func CountryPickerWhenClickingCountryPicker()   {
                                     }
                                 }, completion: nil)
                                 self.str_Back_Status = "NewRegistor"
+                }
             }
         }
     }
@@ -743,14 +947,21 @@ func CountryPickerWhenClickingCountryPicker()   {
         dic_inputValues["user_dob"] = ""
         dic_inputValues["user_image"] = ""
 
-        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: KProfileRegUpdate as NSString,methodtype:  "PUT", classVc : self.view) {
+        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: KProfileRegUpdate as NSString,methodtype:  "PUT", classVc : self) {
             (  dic_data) in
-            print("FinalValue---------------------------", dic_data)
             if (dic_data as AnyObject).count == 1 && dic_data["Message"] != nil{
                 let message = dic_data["Message"] as! String
                 self.txt_password.showError(message: message)
                 self.str_stoploader = "0"
-            }else{
+            }
+            else if (dic_data["InternetError"] != nil){
+                self.str_stoploader = "0"
+            }
+            else if (dic_data["InternalServerError"] != nil){
+                self.AddChildVc(view2: self.objInternetVc)
+                self.str_stoploader = "0"
+            }
+            else{
                 self.str_stoploader = "0"
                 let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVcID") as! HomeVc
                 self.present(homeVc, animated:false, completion:nil)
@@ -758,7 +969,7 @@ func CountryPickerWhenClickingCountryPicker()   {
         }
     }
    
-    func CheckOldCustomerPassword()  {
+    func CheckOldCustomerPassword() {
         self.str_stoploader = "1"
         firstImageLoading(button: button_Password)
         var dic_inputValues = [String : String]()
@@ -766,14 +977,21 @@ func CountryPickerWhenClickingCountryPicker()   {
         dic_inputValues["user_dial_code"] = self.str_dialdCode
         dic_inputValues["user_mobile_no"] = txt_mobileno.text
         dic_inputValues["user_password"] = txt_password.text
-        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: KCheckOldUserPassword as NSString ,methodtype:  "POST", classVc : self.view) {
+        objDatahandler .InputValues(inputDic: dic_inputValues as NSDictionary, suburl: KCheckOldUserPassword as NSString ,methodtype:  "POST", classVc : self) {
             (  dic_data) in
-            print("FinalValue---------------------------", dic_data)
             if (dic_data as AnyObject).count == 1 && dic_data["Message"] != nil{
                 let message = dic_data["Message"] as! String
                 self.txt_password.showError(message: message)
                 self.str_stoploader = "0"
-            }else{
+            }
+            else if (dic_data["InternetError"] != nil){
+                self.str_stoploader = "0"
+            }
+            else if (dic_data["InternalServerError"] != nil){
+                self.AddChildVc(view2: self.objInternetVc)
+                self.str_stoploader = "0"
+            }
+            else{
                 self.str_stoploader = "0"
                 let isProfilecompleted = dic_data["is_profile_complete"] as! Bool
                 let token = dic_data["user_auth_token"] as! String
@@ -805,6 +1023,12 @@ func CountryPickerWhenClickingCountryPicker()   {
             }
         }
     }
+   
+  
+    // MARK:  ------------------------------------------>
+
+    
+    
 }
 extension ViewController: MICountryPickerDelegate {
     
@@ -814,7 +1038,7 @@ extension ViewController: MICountryPickerDelegate {
     }
 }
 
-    
+
 
 
 
