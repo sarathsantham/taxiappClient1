@@ -7,9 +7,9 @@
 */
 
 //Login screen--->
-"Get moving with EQTaxi" = "Get moving with Praitaxi";
+"Get moving with EQTaxi" = "Get moving with Prai Taxi";
 "Enter your mobile number" = "Enter your mobile number";
-"Lanuage - English" = "Lanuage - English";
+"Lanuage - English" = "Language : En";
 //OTP screen------>
 "Enter the 4-digit code sent to you at" = "Enter the 4-digit code sent to you at";
 "I didn't receive a code" = "I didn't receive a code";
@@ -18,7 +18,7 @@
 "What's your Password?" = "What's your Password?";
 "Password" = "Password";
 "Confirm Password" = "Confirm Password";
-"Forget password " = "Forget password ";
+"Forget password" = "Forget password";
 
 //New register screen----->
 "What's your name?" = "What's your name?";
@@ -34,6 +34,7 @@
 "Popular" = "Popular";
 "Cash" = "Cash";
 "No available cars" = "No available cars";
+"Credit/Debit Card" = "Credit/Debit Card";
 
 //Confirm pickup----->
 "Confirm your pickup " = "Confirm your pickup";
@@ -42,6 +43,7 @@
 
 //Ripple effect screen----->
 "Swipe to Cancel" = "Swipe to Cancel";
+"Finding a nearest driver" = "Finding a nearest driver";
 
 //Driver details screen------>
 "Call driver" = "Call driver";
@@ -53,6 +55,7 @@
 "     Help / Support" = "     Help / Support";
 "     Rate us" = "     Rate us";
 "     Logout" = "     Logout";
+"     Payments" = "     Payments";
 //Bottomsheet screen---->
 "School" = "School";
 "Home" = "Home";
@@ -85,6 +88,10 @@
 "Done" = "Done";
 "Waiting fare" = "Waiting fare";
 "Waiting time" = "Waiting time";
+"Proceed to  payment" = "Proceed to  payment";
+"Enter CVV" = "Enter CVV";
+"Select Card" = "Select Card";
+"VAT" = "VAT";
 
 //Rating screen----->
 "Rate ride experiance" = "Rate ride experiance";
@@ -94,14 +101,19 @@
 "For Driver" = "For Driver";
 "For Car" = "For Car";
 "For Experience" = "For Experience";
-"Leave a Comment" = "Leave a Comment";
+"  Leave a Comment" = "  Leave a Comment";
 
 
-
-
-
-
-
+//Payment screen----->
+"Payments" = "Payments";
+"Add" = "Add";
+"Card Details Not Found !" = "Card Details Not Found !";
+"Card Number" = "Card Number";
+"Name" = "Name";
+"Expiry Date" = "Expiry Date";
+"Add payment method" = "Add payment method";
+"CVV" = "CVV";
+"John(Example)" = "John(Example)";
 
 
 

@@ -23,7 +23,12 @@ class AddCardVc: UIViewController,UITextFieldDelegate {
     @IBOutlet var txt_cardNo: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Language change------->
+        let userdefaults = UserDefaults.standard
+        let lanuage =  userdefaults.string(forKey: "Lanuage")
+        if lanuage == ".nb"{
+            txt_name.placeholder = "John(eksempel)"
+        }
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {

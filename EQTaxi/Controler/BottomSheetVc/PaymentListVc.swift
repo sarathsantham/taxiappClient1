@@ -23,6 +23,7 @@ class PaymentListVc: UIViewController,UITableViewDataSource,UITableViewDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        GetuserCardDetails()
     }
    

@@ -7,8 +7,8 @@
 */
 //Login screen--->
 "Get moving with EQTaxi" = "Kom i gang og prai en taxi";
-"Enter your mobile number" = "Skriv inn mobilnummeret ditt ";
-"Lanuage - English" = "Lanuage - Norwegian";
+"Enter your mobile number" = "Skriv inn mobilnummeret ditt";
+"Lanuage - English" = "Språk: norsk";
 //OTP screen------>
 "Enter the 4-digit code sent to you at" = "Skriv inn den firesifrede koden som er sendt til deg på";
 "I didn't receive a code" = "Jeg har ikke fått en kode";
@@ -33,6 +33,7 @@
 "Popular" = "Velg biltype";
 "Cash" = "Kontanter";
 "No available cars" = "Ingen tilgjengelige biler";
+"Credit/Debit Card" = "Kreditt- / debetkort";
 
 //Confirm pickup----->
 "Confirm your pickup " = "Bekreft hvor du vil hentes";
@@ -41,6 +42,7 @@
 
 //Ripple effect screen----->
 "Swipe to Cancel" = "Sveip for å avbryte turen";
+"Finding a nearest driver" = "Finne nærmeste sjåfør";
 
 //Driver details screen------>
 "Call driver" = "Ring sjåfør ";
@@ -52,6 +54,7 @@
 "     Help / Support" = "     Send e-post";
 "     Rate us" = "     Gi oss tilbakemelding ";
 "     Logout" = "     Logg ut";
+"     Payments" = "     Betalinger";
 //Bottomsheet screen---->
 "School" = "Skole";
 "Home" = "Hjem";
@@ -84,6 +87,10 @@
 "Done" = "Ferdig";
 "Waiting fare" = "Ventepris";
 "Waiting time" = "Ventetid";
+"Proceed to  payment" = "Fortsett til betaling";
+"Enter CVV" = "Skriv inn CVV";
+"Select Card" = "Velg kort";
+"VAT" = "MVA";
 
 //Rating screen----->
 "Rate ride experiance" = "Ranger turopplevelse";
@@ -93,5 +100,17 @@
 "For Driver" = "PÅ sjåfør";
 "For Car" = "PÅ bil";
 "For Experience" = "For erfaring";
-"Leave a Comment" = "Legg igjen en kommentar";
+"  Leave a Comment" = "  Legg igjen en kommentar";
+
+
+//Payment screen----->
+"Payments" = "Betalinger";
+"Add" = "Legg til";
+"Card Details Not Found !" = "Ingen kortdetaljer funnet";
+"Card Number" = "Kortnummer";
+"Name" = "Navn";
+"Expiry Date" = "Utløpsdato";
+"Add payment method" = "Legg til betalingsmåte";
+"CVV" = "CVV";
+"John(Example)" = "John (eksempel)";
 

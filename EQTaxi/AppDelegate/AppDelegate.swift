@@ -25,14 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MessagingDelegate,UNUserNo
     var client = ScClient(url: kSocketUrl)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+       
+
         Fabric.with([Crashlytics.self])
         let userdefaults = UserDefaults.standard
         if userdefaults.string(forKey: "Lanuage") != nil{
-            let lanuage = userdefaults.string(forKey: "Lanuage")
-            LanguageManger.shared.defaultLanguage = Languages(rawValue: lanuage!)!
+            let lanuage12 = userdefaults.string(forKey: "Lanuage")
+            if lanuage12 == ".nb"{
+                  LanguageManger.shared.defaultLanguage = .nb
+            }else{
+                 LanguageManger.shared.defaultLanguage = .en
+            }
             
         } else {
+             UserDefaults.standard.set(".en", forKey: "Lanuage")
               LanguageManger.shared.defaultLanguage = .en
          }
       

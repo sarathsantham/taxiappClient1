@@ -111,6 +111,10 @@ var bottomSheetInternetConnectionVc = InternetConnectionVc()
     }
     func InputValuesGetmethod   (inputDic : NSDictionary,suburl : NSString,methodtype : NSString,classVc : Any , completion: @escaping (_ data:NSArray) -> Void) {
         guard let status = Network.reachability?.status else { return }
+        
+       
+        
+        
         if status.rawValue == "unreachable"{
             (classVc as AnyObject).view.endEditing(true)
             (classVc as AnyObject).addChildViewController(bottomSheetInternetConnectionVc)
@@ -173,5 +177,45 @@ var bottomSheetInternetConnectionVc = InternetConnectionVc()
             
         }
     }
+    
+//func uploadImageData(inputUrl:String,parameters:[String:Any],imageName: String,imageFile : UIImage,completion:@escaping(_:Any)->Void) {
+//        
+//        let imageData = UIImageJPEGRepresentation(imageFile , 0.5)
+//        
+//        Alamofire.upload(multipartFormData: { (multipartFormData) in
+//            
+//            multipartFormData.append(imageData!, withName: imageName, fileName: "swift_file\(arc4random_uniform(100)).jpeg", mimeType: "image/jpeg")
+//            
+//            for key in parameters.keys{
+//                let name = String(key)
+//                if let val = parameters[name] as? String{
+//                    multipartFormData.append(val.data(using: .utf8)!, withName: name)
+//                }
+//            }
+//        }, to:inputUrl)
+//        { (result) in
+//            switch result {
+//            case .success(let upload, _, _):
+//                
+//                upload.uploadProgress(closure: { (Progress) in
+//                })
+//                
+//                upload.responseJSON { response in
+//                    
+//                    if let JSON = response.result.value {
+//                        completion(JSON)
+//                    }else{
+//                        completion(nilValue)
+//                    }
+//                }
+//                
+//            case .failure(let encodingError):
+//                completion(nilValue)
+//            }
+//        }
+//        
+//    }
+    
+    
     
 }

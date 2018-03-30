@@ -132,6 +132,16 @@ import ScClient
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //change Language------->
+        let userdefaults = UserDefaults.standard
+        let lanuage =  userdefaults.string(forKey: "Lanuage")
+        UserDefaults.standard.set("Home", forKey: "statusBack")//setObject
+        if lanuage == ".nb"{
+            txt_endlocation.placeholder = "Ankomstpunkt"
+            txt_startLocation.placeholder = "Hentested"
+            txt_ConfirmPickupLocation.placeholder = "bekreft hentestedet"
+        }
+        
         
         // forcollection view------------->
     
@@ -638,10 +648,11 @@ import ScClient
                                     let myLocation = CLLocationCoordinate2D(latitude:self.dub_LatitudeStart, longitude: self.dub_LongitudeStart)
                                     let distination = CLLocationCoordinate2D(latitude:self.dub_LatitudeEnd, longitude: self.dub_LongitudeEnd)
                                     let bounds = GMSCoordinateBounds(coordinate: myLocation, coordinate: distination)
-                                    let update = GMSCameraUpdate.fit(bounds, with: UIEdgeInsetsMake(170, 30, 30, 30))
+                                    let update = GMSCameraUpdate.fit(bounds, with: UIEdgeInsetsMake(150, 30, 50, 50))
+                                   // let update = GMSCameraUpdate.fit(bounds)
                                     self.view_map!.moveCamera(update)
                                     // Move the camera 100 points down, and 200 points to the right.
-                                    let downwards = GMSCameraUpdate.scrollBy(x: 0, y: 200)
+                                    let downwards = GMSCameraUpdate.scrollBy(x: 0, y: 160)
                                     self.view_map.animate(with: downwards)
                                     self .AddMarker(lat: self.dub_LatitudeEnd, lon: self.dub_LongitudeEnd,type: "drop")
                                 }
@@ -853,7 +864,9 @@ import ScClient
     @IBAction func didclickCancelRideRequestButton(_ sender: Any) {
     }
     @IBAction func didclickMenuButton(_ sender: Any) {
-        if (button_menu.currentImage?.isEqual(UIImage(named: "backArrow(Black)")))! {
+         let userdefaults = UserDefaults.standard
+        let  status = userdefaults.string(forKey: "statusBack")
+        if (status == "Home") {
            
             if  str_isStart_End_Picker == "PickUpLocation"{
                 str_isStart_End_Picker = ""
@@ -865,7 +878,9 @@ import ScClient
                 
                 BackButtonCallForMenuStartEndLOcation()
             }
+             UserDefaults.standard.set("Back", forKey: "statusBack")
         }else{
+            UserDefaults.standard.set("Home", forKey: "statusBack")
             let sideMenuVC = UIStoryboard(name:"Main",bundle:nil).instantiateViewController(withIdentifier: "MenuViewID")as!MenuView
             sideMenuVC.delegate=self
             let vc = self
@@ -927,8 +942,6 @@ import ScClient
     }
     @IBAction func didBookselectedCarListButton(_ sender: Any) {
         GetuserCardDetails()
-        
-        
     }
     
 // MARK: Button Actions For Driver view ---------------------------->

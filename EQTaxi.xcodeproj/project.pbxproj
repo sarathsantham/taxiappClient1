@@ -130,7 +130,6 @@
 		CBC1C96E20483D25001F0339 /* RatingVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingVc.swift; sourceTree = "<group>"; };
 		CBC1C96F20483D25001F0339 /* RatingVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingVc.xib; sourceTree = "<group>"; };
 		CBC1C97220484032001F0339 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
-		CBC88F53205BA82100E6AAFE /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		CBC88F54205BA82200E6AAFE /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CBC88F56205BA83100E6AAFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CBC88F58205BA83500E6AAFE /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -235,12 +234,12 @@
 		CB123FE6201737B300B71B87 /* EQTaxi */ = {
 			isa = PBXGroup;
 			children = (
+				CB124015201737BC00B71B87 /* AppDelegate */,
 				CB12402B2017388400B71B87 /* DataHandler */,
 				CB1240182017380200B71B87 /* Utilities */,
 				CB124017201737F400B71B87 /* Controler */,
 				CB235F0D202C346F0009C28A /* View */,
 				CB124016201737D600B71B87 /* Resource */,
-				CB124015201737BC00B71B87 /* AppDelegate */,
 			);
 			path = EQTaxi;
 			sourceTree = "<group>";
@@ -475,7 +474,12 @@
 				TargetAttributes = {
 					CB123FE3201737B300B71B87 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					CB123FF7201737B300B71B87 = {
 						CreatedOnToolsVersion = 9.2;
@@ -716,7 +720,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB123FEC201737B300B71B87 /* Base */,
-				CBC88F53205BA82100E6AAFE /* nb */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -859,15 +862,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
 				INFOPLIST_FILE = EQTaxi/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer;
 				PRODUCT_NAME = PraiTaxi;
-				PROVISIONING_PROFILE = "40d25351-fa83-48c5-b94f-e7e1ab179161";
+				PROVISIONING_PROFILE = "a7faf626-f1c1-44c2-9766-027fe08ada88";
 				PROVISIONING_PROFILE_SPECIFIER = EQTaxiCustomerPro;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -880,16 +883,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Equator Technologies (797M6GHVPC)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 797M6GHVPC;
 				INFOPLIST_FILE = EQTaxi/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EqTaxi.EqTaxiCustomer;
 				PRODUCT_NAME = PraiTaxi;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a7faf626-f1c1-44c2-9766-027fe08ada88";
+				PROVISIONING_PROFILE_SPECIFIER = EQTaxiCustomerPro;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

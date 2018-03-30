@@ -27,7 +27,13 @@ class RatingVc: UIViewController,FloatRatingViewDelegate,UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //change Language------->
+        let userdefaults = UserDefaults.standard
+        let lanuage =  userdefaults.string(forKey: "Lanuage")
+        if lanuage == ".nb"{
+            comment.text = "Legg igjen en kommentar"
+        }
+        
         // For Driver---------------->
         viewRating_forDriver.backgroundColor = UIColor.clear
         viewRating_forDriver.delegate = self

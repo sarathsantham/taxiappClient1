@@ -73,6 +73,15 @@ class LoginVc: UIViewController,UITextFieldDelegate,InternetVcDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userdefaults = UserDefaults.standard
+         let lanuage =  userdefaults.string(forKey: "Lanuage")
+        if lanuage == ".nb"{
+           txt_mobileno.placeholder = "Skriv inn mobilnummeret ditt"
+            txt_Confirmpassword.placeholder = "Bekreft passord"
+            txt_lastname.placeholder = "Etternavn"
+            txt_firstname.placeholder = "Fornavn"
+            txt_password.placeholder = "passord"
+        }
          view_Lanuage.isHidden=true
         AddShadowTo(view_shadow: view_Lanuage)
         objInternetVc.delegate=self
@@ -298,7 +307,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     }
     @IBAction func didclicknorwegionButton(_ sender: Any) {
         // change the language
-         UserDefaults.standard.set(".nb", forKey: "Token")
+         UserDefaults.standard.set(".nb", forKey: "Lanuage")
         LanguageManger.shared.setLanguage(language: .nb)
         
         // return to root view contoller and reload it
@@ -310,7 +319,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     }
     @IBAction func didclickenglishButton(_ sender: Any) {
         LanguageManger.shared.setLanguage(language: .en)
-          UserDefaults.standard.set(".en", forKey: "Token")
+          UserDefaults.standard.set(".en", forKey: "Lanuage")
         // return to root view contoller and reload it
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -324,9 +333,25 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     @IBAction func didclickRegistarSubmitButton(_ sender: Any) {
         if txt_firstname.text == "" || txt_lastname.text == "" {
             if txt_firstname.text == ""{
-                txt_firstname.showError(message: "Enter first name")
+                
+                let userdefaults = UserDefaults.standard
+                let lanuage =  userdefaults.string(forKey: "Lanuage")
+                if lanuage == ".nb"{
+                    txt_firstname.showError(message: "Skriv inn fornavn")
+                }else{
+                    txt_firstname.showError(message: "Enter first name")
+                }
+                
             }else{
-                txt_lastname.showError(message: "Enter last name")
+                
+                let userdefaults = UserDefaults.standard
+                let lanuage =  userdefaults.string(forKey: "Lanuage")
+                if lanuage == ".nb"{
+                    txt_lastname.showError(message: "Skriv inn etternavn")
+                }else{
+                    txt_lastname.showError(message: "Enter last name")
+                }
+                
             }
         }else{
                   CustomerProfileUpdate()
@@ -339,7 +364,15 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
         if txt_password.text == "" || txt_Confirmpassword.text == ""
         {
             if txt_password.text == ""{
-                txt_password.showError(message: "Enter password")
+                
+                let userdefaults = UserDefaults.standard
+                let lanuage =  userdefaults.string(forKey: "Lanuage")
+                if lanuage == ".nb"{
+                    txt_password.showError(message: "Oppgi passord")
+                }else{
+                    txt_password.showError(message: "Enter password")
+                }
+                
 
             }
             else{
@@ -355,12 +388,26 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
                       SetPasswordServiceCall()
                 }
                 else{
-                     txt_Confirmpassword.showError(message: "Minimum 6 characters")
+                    let userdefaults = UserDefaults.standard
+                    let lanuage =  userdefaults.string(forKey: "Lanuage")
+                    if lanuage == ".nb"{
+                        txt_Confirmpassword.showError(message: "Minst 6 tegn")
+                    }else{
+                        txt_Confirmpassword.showError(message: "Minimum 6 characters")
+                    }
+                    
                 }
               
                
             }else{
-                txt_Confirmpassword.showError(message: "password mismatched")
+                let userdefaults = UserDefaults.standard
+                let lanuage =  userdefaults.string(forKey: "Lanuage")
+                if lanuage == ".nb"{
+                    txt_Confirmpassword.showError(message: "passordet er feil")
+                }else{
+                    txt_Confirmpassword.showError(message: "password mismatched")
+                }
+                
             }
         }
       
@@ -489,7 +536,13 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     
     @IBAction func didclickVerifyMobileNoSendOTPButton(_ sender: Any) {
         if  self.txt_mobileno.text==""{
+            let userdefaults = UserDefaults.standard
+            let lanuage =  userdefaults.string(forKey: "Lanuage")
+            if lanuage == ".nb"{
+               txt_mobileno.showError(message: "Skriv inn mobilnummer")
+            }else{
             txt_mobileno.showError(message: "Enter mobile number")
+            }
 
         }
         else{
@@ -499,7 +552,14 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
                 self .MobileNoVerification()
 
            }else{
-                 txt_mobileno.showError(message: "Enter valid mobile number")
+                let userdefaults = UserDefaults.standard
+                let lanuage =  userdefaults.string(forKey: "Lanuage")
+                if lanuage == ".nb"{
+                    txt_mobileno.showError(message: "Skriv inn gyldig mobilnummer")
+                }else{
+                    txt_mobileno.showError(message: "Enter valid mobile number")
+                }
+                
             }
         }
     }
@@ -687,7 +747,7 @@ func CountryPickerWhenClickingCountryPicker()   {
             if (dic_data as AnyObject).count == 1 && dic_data["Message"] != nil
             {
                 let message = dic_data["Message"] as! String
-                self.txt_password.showError(message: message)
+                self.txt_mobileno.showError(message: message)
                 self.str_stoploader = "0"
                 
             }
@@ -700,8 +760,8 @@ func CountryPickerWhenClickingCountryPicker()   {
             }
             else{
                 self.str_stoploader = "0"
-                let isnew : Bool = (dic_data["is_new"] as? Bool)!
-                if isnew == true{
+                let isnew : Bool = (dic_data["is_password_set"] as? Bool)!
+                if isnew == false{
                     self.txt_Confirmpassword.isHidden=false
                     self.lbl_CofirmPassword.isHidden=false
                      Utilities.showToast(message: "Send OTP Success" , view:self.view)
@@ -962,6 +1022,9 @@ func CountryPickerWhenClickingCountryPicker()   {
                 self.str_stoploader = "0"
             }
             else{
+                let username : String = self.txt_firstname.text! + " " + self.txt_lastname.text!
+                UserDefaults.standard.set(username, forKey: "UserName") //setObject
+                UserDefaults.standard.set(self.txt_mobileno.text, forKey: "MobileNO")
                 self.str_stoploader = "0"
                 let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVcID") as! HomeVc
                 self.present(homeVc, animated:false, completion:nil)
@@ -998,6 +1061,13 @@ func CountryPickerWhenClickingCountryPicker()   {
                 let userId = dic_data["pk_user_id"]
                 UserDefaults.standard.set(userId, forKey: "UserId") //setObject
                 UserDefaults.standard.set(token, forKey: "Token")
+                
+
+                let firstname : String = (dic_data["user_first_name"] as! String) 
+                 let lasttname : String = dic_data["user_last_name"] as! String
+                 let name : String = firstname + " " + lasttname
+                UserDefaults.standard.set(name, forKey: "UserName") //setObject
+                UserDefaults.standard.set(self.txt_mobileno.text, forKey: "MobileNO")
                 if isProfilecompleted == true{
                 let homeVc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVcID") as! HomeVc
                 self.present(homeVc, animated:false, completion:nil)

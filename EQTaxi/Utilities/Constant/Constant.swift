@@ -34,18 +34,17 @@ let kSocketUrl = "http://praitaxi.a2z4smb.com:3005/socketcluster/"
  let KStrDialCode = "+47"
  let KStrCountryCode = "NO"
  let KCurrencyCode = "kr "
-/*
 
 //LocalURl
-let kBaseUrl = "http://192.168.50.23/eqtaxi_service/mobile/"
-let kBaseUrl_image = "http://192.168.50.23/eqtaxi_service/"
-let kSocketUrl = "ws://192.168.50.52:3000/socketcluster/"
-let KCurrencyCode = "kr "
-let KCountryImage = "in"
-let KLabelCountry = "+91"
-let KStrDialCode = "+91"
-let KStrCountryCode = "IN"
-*/
+//let kBaseUrl = "http://192.168.50.23/eqtaxi_service/mobile/"
+//let kBaseUrl_image = "http://192.168.50.23/eqtaxi_service/"
+//let kSocketUrl = "ws://192.168.50.52:3000/socketcluster/"
+//let KCurrencyCode = "kr "
+//let KCountryImage = "in"
+//let KLabelCountry = "+91"
+//let KStrDialCode = "+91"
+//let KStrCountryCode = "IN"
+
 // Google APIKey
 
 let kGoogleAPIKey = "AIzaSyAT6PAk4r4JpHcXbyR_Ginyx58-KB_cSvA"

@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomSheetInitialSheetVc" customModule="EQTaxi" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomSheetInitialSheetVc" customModule="PraiTaxi" customModuleProvider="target">
             <connections>
                 <outlet property="headerView" destination="SKG-T5-hhb" id="hFq-iq-MHB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
