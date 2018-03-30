@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EqTaxiCustomer.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>AB55F1F0C8153D1011D4A9CE1AF240A6E970174E</string>
+				<key>dateExpires</key>
+				<string>02/01/19</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>797M6GHVPC.com.EqTaxi.EqTaxiCustomer</string>
+				<key>aps-environment</key>
+				<string>production</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>797M6GHVPC</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>EQ TAXI.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>3dd09952-0a03-4fe1-acd8-ae5d2069d3a8</string>
+				<key>name</key>
+				<string>EQTaxiCustomerPro</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>797M6GHVPC</string>
+				<key>name</key>
+				<string>Equator Technologies</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
